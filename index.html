@@ -12,17 +12,24 @@
 </head>
 <body class="bg-surface-dim selection:bg-primary selection:text-on-primary">
     <!-- Top Navigation Bar -->
-    <nav class="fixed top-0 w-full flex justify-between items-center px-8 h-20 md:h-28 bg-[#131313]/80 backdrop-blur-md text-white font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm z-50">
-        <a href="index.html" class="block h-20 md:h-28">
-            <img src="images/icons/logo-custom.png2.png" alt="FUSSI" class="h-full object-contain">
-        </a>
-        <div class="hidden md:flex gap-10">
+    <nav class="fixed top-0 w-full grid grid-cols-3 items-center px-8 h-20 md:h-28 bg-[#131313]/80 backdrop-blur-md text-white font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm z-50">
+        <!-- Navigation Links (Left) -->
+        <div class="hidden md:flex gap-10 justify-start">
             <a class="text-white border-b border-white pb-1 transition-colors duration-100" href="collection/index.html">SHOP</a>
             <a class="text-[#919191] hover:text-white transition-colors duration-100" href="collection/index.html">COLLECTIONS</a>
             <a class="text-[#919191] hover:text-white transition-colors duration-100" href="pitch-noir/index.html">EDITORIAL</a>
             <a class="text-[#919191] hover:text-white transition-colors duration-100" href="#">ARCHIVE</a>
         </div>
-        <div class="flex items-center gap-6">
+        <!-- Mobile Links Placeholder / Spacer for Grid -->
+        <div class="md:hidden"></div>
+
+        <!-- Logo (Center) -->
+        <a href="index.html" class="block h-20 md:h-28 justify-self-center">
+            <img src="images/icons/logo-custom.png2.png" alt="FUSSI" class="h-full object-contain">
+        </a>
+
+        <!-- Icons (Right) -->
+        <div class="flex items-center gap-6 justify-self-end">
             <button class="scale-100 active:scale-95 transition-transform">
                 <span class="material-symbols-outlined" data-icon="search">search</span>
             </button>
@@ -36,19 +43,17 @@
     <main class="pt-0">
         <!-- Hero Section -->
         <section class="relative h-screen w-full overflow-hidden flex items-end p-8 md:p-16">
-            <div class="absolute inset-0 bg-cover bg-center z-0 scale-105" data-alt="Editorial streetwear model in dark urban setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZZHmoDwB3JnwM7lXh1InoAkTleH2G8ZlPYxRXpO0RDWRdFxcHWHxAPVd4Zp7YV4bGTtrPqH6webvimkPZInAsb2cPsbhkepGwyEE8xtI5tT5WRzzte5zmBw3TPq9O1BfbbAmXhSGePUgZaTf28R33OX5J1_Z4ZrwbIjsazYVsZYlMq9C-4uwlTTIdKA4NjOj7y5ON8JYFvtGlPC5dHZh_XJuFhvOWvSX9yKlGAE_7W7XCTZi_iMWMca5mlV7qwIf8VmeeMxksNYco');">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent opacity-80"></div>
+            <div class="absolute inset-0 bg-cover bg-center z-0" data-alt="FUSSI Editorial 18" style="background-image: url('images/kurdistan-hero2.png');">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent opacity-60"></div>
             </div>
             <div class="relative z-10 w-full max-w-7xl">
-                <h1 class="text-fussi text-6xl md:text-[10rem] font-black leading-[0.85] tracking-tighter mb-8 uppercase">
-                    THE FUSSI<br/>EDITORIAL
-                </h1>
-                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
-                    <p class="font-['Inter'] text-sm tracking-widest max-w-md uppercase opacity-80">
-                        Technically superior football-inspired garments. Engineered for the pitch, curated for the streets.
-                    </p>
-                    <a href="collection/index.html" class="bg-primary text-on-primary px-12 py-5 font-['Space_Grotesk'] font-black uppercase text-lg tracking-tighter scale-100 active:scale-95 transition-transform text-center">
-                        EXPLORE DROP 01
+                <div class="mb-4">
+                    <span class="text-white text-base md:text-lg font-medium opacity-80 block mb-1 tracking-wide">New in</span>
+                    <h1 class="text-white text-4xl md:text-6xl font-bold uppercase tracking-tight mb-8 leading-none">
+                        NATIONS JERSEY
+                    </h1>
+                    <a href="collection/index.html" class="inline-block bg-white text-black px-8 py-3 text-[10px] md:text-xs font-bold uppercase tracking-[0.2em] hover:bg-black hover:text-white transition-all duration-300">
+                        SHOP NOW
                     </a>
                 </div>
             </div>
