@@ -1,4 +1,4 @@
-# MONOLITH EDITORIAL
+# FUSSI EDITORIAL
 
 A premium editorial platform and streetwear label defining the intersection of technical performance and high-fashion aesthetics.
 
