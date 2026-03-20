@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>MONOLITH | EDITORIAL STREETWEAR</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/tailwind-config.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="assets/css/main.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface-dim selection:bg-primary selection:text-on-primary">
+    <!-- Top Navigation Bar -->
+    <nav class="fixed top-0 w-full flex justify-between items-center px-8 py-6 bg-[#131313]/80 backdrop-blur-md text-white font-['Space_Grotesk'] uppercase tracking-tighter font-bold text-sm z-50">
+        <a href="index.html" class="text-2xl font-black tracking-tighter text-white">MONOLITH</a>
+        <div class="hidden md:flex gap-10">
+            <a class="text-white border-b border-white pb-1 transition-colors duration-100" href="collection/index.html">SHOP</a>
+            <a class="text-[#919191] hover:text-white transition-colors duration-100" href="collection/index.html">COLLECTIONS</a>
+            <a class="text-[#919191] hover:text-white transition-colors duration-100" href="pitch-noir/index.html">EDITORIAL</a>
+            <a class="text-[#919191] hover:text-white transition-colors duration-100" href="#">ARCHIVE</a>
+        </div>
+        <div class="flex items-center gap-6">
+            <button class="scale-100 active:scale-95 transition-transform">
+                <span class="material-symbols-outlined" data-icon="search">search</span>
+            </button>
+            <a href="cart/index.html" class="scale-100 active:scale-95 transition-transform">
+                <span class="material-symbols-outlined" data-icon="shopping_bag">shopping_bag</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="pt-0">
+        <!-- Hero Section -->
+        <section class="relative h-screen w-full overflow-hidden flex items-end p-8 md:p-16">
+            <div class="absolute inset-0 bg-cover bg-center z-0 scale-105" data-alt="Editorial streetwear model in dark urban setting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDZZHmoDwB3JnwM7lXh1InoAkTleH2G8ZlPYxRXpO0RDWRdFxcHWHxAPVd4Zp7YV4bGTtrPqH6webvimkPZInAsb2cPsbhkepGwyEE8xtI5tT5WRzzte5zmBw3TPq9O1BfbbAmXhSGePUgZaTf28R33OX5J1_Z4ZrwbIjsazYVsZYlMq9C-4uwlTTIdKA4NjOj7y5ON8JYFvtGlPC5dHZh_XJuFhvOWvSX9yKlGAE_7W7XCTZi_iMWMca5mlV7qwIf8VmeeMxksNYco');">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#0e0e0e] via-transparent to-transparent opacity-80"></div>
+            </div>
+            <div class="relative z-10 w-full max-w-7xl">
+                <h1 class="text-monolith text-6xl md:text-[10rem] font-black leading-[0.85] tracking-tighter mb-8 uppercase">
+                    THE MONOLITH<br/>EDITORIAL
+                </h1>
+                <div class="flex flex-col md:flex-row md:items-end justify-between gap-8">
+                    <p class="font-['Inter'] text-sm tracking-widest max-w-md uppercase opacity-80">
+                        Technically superior football-inspired garments. Engineered for the pitch, curated for the streets.
+                    </p>
+                    <a href="collection/index.html" class="bg-primary text-on-primary px-12 py-5 font-['Space_Grotesk'] font-black uppercase text-lg tracking-tighter scale-100 active:scale-95 transition-transform text-center">
+                        EXPLORE DROP 01
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Category Ticker / Navigation -->
+        <section class="bg-surface-container-lowest border-y border-outline-variant/15 py-4 overflow-hidden">
+            <div class="flex whitespace-nowrap gap-12 animate-infinite-scroll">
+                <div class="flex gap-12 items-center">
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">KITS</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">TEES</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">ACCESSORIES</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">OUTERWEAR</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">COLLECTIBLES</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                </div>
+                <!-- Duplicate for seamless scroll -->
+                <div class="flex gap-12 items-center">
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">KITS</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">TEES</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">ACCESSORIES</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">OUTERWEAR</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                    <span class="text-monolith font-bold text-xs tracking-widest text-[#919191]">COLLECTIBLES</span>
+                    <span class="material-symbols-outlined text-[8px] text-primary" data-icon="circle" style="font-variation-settings: 'FILL' 1;">circle</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- New Arrivals Grid -->
+        <section class="px-8 py-24 bg-surface-dim">
+            <div class="flex justify-between items-baseline mb-16">
+                <h2 class="text-monolith text-5xl font-black tracking-tighter uppercase">NEW ARRIVALS</h2>
+                <a class="text-monolith text-xs font-bold border-b border-primary pb-1 tracking-widest hover:opacity-70 transition-opacity" href="collection/index.html">VIEW ALL</a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-1 gap-y-12">
+                <!-- Product 01 -->
+                <a href="product/index.html" class="group cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4 relative">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Black heavyweight jersey with minimal branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRUOXfNfNaXNK-SWl2ub8JSegwk38GFbXZfLaAVMa7cmzHNFqoiaJG8BC5RyECrhPle94Hk3ulixEBB85GkHVmT1ycNvVuDkLa3WIClKw6hjxEdbFvPLKpA-chJW3R5jN7UHZuFAhm3Tx31h9U4pIj1NUldt17OcAeEdYfvCoassR23_h6FP1F9iFFxrIjihbAZPIzNnTrhLrmn5WirAKT7mhQ70ll032e2Uyz5pPZcc3Ri4MQUPX5Hr7wolEAqEAPRW_PqvD7_Wwz"/>
+                        <div class="absolute top-4 left-4 bg-primary text-on-primary text-[10px] font-black px-2 py-1 uppercase tracking-tighter">Limited</div>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-monolith text-[10px] font-bold tracking-widest text-[#919191] uppercase">Kits</span>
+                        <h3 class="text-monolith font-bold text-lg leading-tight uppercase">Obsidian Strike Kit v.01</h3>
+                        <span class="font-['Inter'] text-sm mt-1">$145.00</span>
+                    </div>
+                </a>
+                <!-- Product 02 -->
+                <a href="product/index.html" class="group cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="White techwear tee with abstract football graphic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBurqdlvh1j5FOzyFqZ6czvUF37TADKIxyyOKGGQgZHP4AfXJiVHfHn0eSO8ra5jEIgGBcFONCX-T2wDMsVkOvQ0a1pR8JTYqXKdFr3jG2u1YXdYXNXHCiJHyXQuTXgC43HiFhfu9Ar7n16xqeBN_AXOXE7w8-VDqVADmGkJ3KZWTj6ZOs6wBXhIXCU-WbgUt2PGE1G5-AczYWHkKnT0d5WcYW-zKkui5wwhB2dZYWxCqYxVd672bpNzeTQBdGV079jqEf09JHLEhgJ"/>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-monolith text-[10px] font-bold tracking-widest text-[#919191] uppercase">Tees</span>
+                        <h3 class="text-monolith font-bold text-lg leading-tight uppercase">Void Core Tee</h3>
+                        <span class="font-['Inter'] text-sm mt-1">$85.00</span>
+                    </div>
+                </a>
+                <!-- Product 03 -->
+                <a href="product/index.html" class="group cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Red and black performance sneakers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRUOXfNfNaXNK-SWl2ub8JSegwk38GFbXZfLaAVMa7cmzHNFqoiaJG8BC5RyECrhPle94Hk3ulixEBB85GkHVmT1ycNvVuDkLa3WIClKw6hjxEdbFvPLKpA-chJW3R5jN7UHZuFAhm3Tx31h9U4pIj1NUldt17OcAeEdYfvCoassR23_h6FP1F9iFFxrIjihbAZPIzNnTrhLrmn5WirAKT7mhQ70ll032e2Uyz5pPZcc3Ri4MQUPX5Hr7wolEAqEAPRW_PqvD7_Wwz"/>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-monolith text-[10px] font-bold tracking-widest text-[#919191] uppercase">Footwear</span>
+                        <h3 class="text-monolith font-bold text-lg leading-tight uppercase">Vertex-0 Pitch Shoe</h3>
+                        <span class="font-['Inter'] text-sm mt-1">$210.00</span>
+                    </div>
+                </a>
+                <!-- Product 04 -->
+                <a href="product/index.html" class="group cursor-pointer">
+                    <div class="aspect-[3/4] overflow-hidden bg-surface-container-low mb-4">
+                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Black minimalist utility backpack" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRUOXfNfNaXNK-SWl2ub8JSegwk38GFbXZfLaAVMa7cmzHNFqoiaJG8BC5RyECrhPle94Hk3ulixEBB85GkHVmT1ycNvVuDkLa3WIClKw6hjxEdbFvPLKpA-chJW3R5jN7UHZuFAhm3Tx31h9U4pIj1NUldt17OcAeEdYfvCoassR23_h6FP1F9iFFxrIjihbAZPIzNnTrhLrmn5WirAKT7mhQ70ll032e2Uyz5pPZcc3Ri4MQUPX5Hr7wolEAqEAPRW_PqvD7_Wwz"/>
+                    </div>
+                    <div class="flex flex-col">
+                        <span class="text-monolith text-[10px] font-bold tracking-widest text-[#919191] uppercase">Accessories</span>
+                        <h3 class="text-monolith font-bold text-lg leading-tight uppercase">Monolith Utility Pack</h3>
+                        <span class="font-['Inter'] text-sm mt-1">$120.00</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Featured Banners -->
+        <section class="flex flex-col md:flex-row min-h-screen">
+            <div class="md:w-1/2 relative min-h-[500px] flex items-center justify-center p-12 overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Night sky stars over dark mountain silhouette" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRUOXfNfNaXNK-SWl2ub8JSegwk38GFbXZfLaAVMa7cmzHNFqoiaJG8BC5RyECrhPle94Hk3ulixEBB85GkHVmT1ycNvVuDkLa3WIClKw6hjxEdbFvPLKpA-chJW3R5jN7UHZuFAhm3Tx31h9U4pIj1NUldt17OcAeEdYfvCoassR23_h6FP1F9iFFxrIjihbAZPIzNnTrhLrmn5WirAKT7mhQ70ll032e2Uyz5pPZcc3Ri4MQUPX5Hr7wolEAqEAPRW_PqvD7_Wwz');"></div>
+                <div class="absolute inset-0 bg-[#0e0e0e]/40 group-hover:bg-[#0e0e0e]/20 transition-colors"></div>
+                <div class="relative z-10 text-center">
+                    <span class="text-monolith text-xs font-bold tracking-[0.3em] uppercase mb-4 block">SEASONAL RE-UP</span>
+                    <h2 class="text-monolith text-6xl font-black uppercase tracking-tighter mb-8 leading-none">WINTER<br/>DROP 04</h2>
+                    <a href="collection/index.html" class="inline-block border border-white text-white px-8 py-4 font-monolith font-bold text-sm tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+                        SHOP THE DROP
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative min-h-[500px] flex items-center justify-center p-12 overflow-hidden group">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-110" data-alt="Close up of black high-quality fabric texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBRUOXfNfNaXNK-SWl2ub8JSegwk38GFbXZfLaAVMa7cmzHNFqoiaJG8BC5RyECrhPle94Hk3ulixEBB85GkHVmT1ycNvVuDkLa3WIClKw6hjxEdbFvPLKpA-chJW3R5jN7UHZuFAhm3Tx31h9U4pIj1NUldt17OcAeEdYfvCoassR23_h6FP1F9iFFxrIjihbAZPIzNnTrhLrmn5WirAKT7mhQ70ll032e2Uyz5pPZcc3Ri4MQUPX5Hr7wolEAqEAPRW_PqvD7_Wwz');"></div>
+                <div class="absolute inset-0 bg-[#0e0e0e]/60 group-hover:bg-[#0e0e0e]/40 transition-colors"></div>
+                <div class="relative z-10 text-center">
+                    <span class="text-monolith text-xs font-bold tracking-[0.3em] uppercase mb-4 block">EXCLUSIVE ACCESS</span>
+                    <h2 class="text-monolith text-6xl font-black uppercase tracking-tighter mb-8 leading-none">LIMITED<br/>EDITION</h2>
+                    <a href="collection/index.html" class="inline-block border border-white text-white px-8 py-4 font-monolith font-bold text-sm tracking-widest hover:bg-white hover:text-black transition-all duration-300">
+                        VIEW COLLECTION
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Promotional Strip -->
+        <section class="bg-surface-container-highest py-12 px-8">
+            <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left">
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-symbols-outlined mb-4 text-primary" data-icon="rocket_launch">rocket_launch</span>
+                    <h4 class="text-monolith font-black text-sm tracking-widest uppercase mb-2">FAST SHIPPING</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-[#919191]">Global priority delivery within 48-72 hours.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-symbols-outlined mb-4 text-primary" data-icon="assignment_return">assignment_return</span>
+                    <h4 class="text-monolith font-black text-sm tracking-widest uppercase mb-2">EASY RETURNS</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-[#919191]">30-day no-questions-asked return policy.</p>
+                </div>
+                <div class="flex flex-col items-center md:items-start">
+                    <span class="material-symbols-outlined mb-4 text-primary" data-icon="verified">verified</span>
+                    <h4 class="text-monolith font-black text-sm tracking-widest uppercase mb-2">PREMIUM QUALITY</h4>
+                    <p class="text-[10px] uppercase tracking-widest text-[#919191]">Engineered using lab-tested technical textiles.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="bg-surface-container-lowest py-32 px-8 flex flex-col items-center">
+            <div class="max-w-2xl w-full text-center">
+                <h2 class="text-monolith text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6">JOIN THE MONOLITH</h2>
+                <p class="font-['Inter'] text-sm text-[#919191] uppercase tracking-[0.2em] mb-12">Early access to drops, editorial features, and member-only events.</p>
+                <form class="flex flex-col md:flex-row gap-0 w-full">
+                    <input class="flex-grow bg-[#353535] border-none text-white text-xs font-bold tracking-widest px-6 py-5 focus:ring-0 placeholder:text-[#919191]" placeholder="EMAIL ADDRESS" type="email"/>
+                    <button class="bg-primary text-on-primary font-black uppercase text-xs tracking-[0.2em] px-12 py-5 hover:bg-primary-container transition-colors">SUBSCRIBE</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0e0e0e] text-white w-full grid grid-cols-1 md:grid-cols-4 gap-12 px-8 py-20 border-t border-[#474747]/15">
+        <div class="md:col-span-1">
+            <a href="index.html" class="text-xl font-black text-white mb-4 tracking-tighter block">MONOLITH</a>
+            <p class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] leading-relaxed">
+                A premium editorial platform and streetwear label defining the intersection of technical performance and high-fashion aesthetics.
+            </p>
+        </div>
+        <div class="flex flex-col gap-3">
+            <span class="text-monolith text-[10px] font-black tracking-widest text-white mb-2 uppercase">SHOPPING</span>
+            <a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] hover:text-white transition-colors" href="#">SHIPPING</a>
+            <a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] hover:text-white transition-colors" href="#">RETURNS</a>
+            <a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] hover:text-white transition-colors" href="#">SIZE GUIDE</a>
+        </div>
+        <div class="flex flex-col gap-3">
+            <span class="text-monolith text-[10px] font-black tracking-widest text-white mb-2 uppercase">LEGAL</span>
+            <a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] hover:text-white transition-colors" href="#">PRIVACY</a>
+            <a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] hover:text-white transition-colors" href="#">TERMS</a>
+            <a class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191] hover:text-white transition-colors" href="#">CONTACT</a>
+        </div>
+        <div class="flex flex-col gap-3">
+            <span class="text-monolith text-[10px] font-black tracking-widest text-white mb-2 uppercase">SOCIAL</span>
+            <div class="flex gap-6 mt-2">
+                <a class="hover:opacity-60 transition-opacity" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path></svg>
+                </a>
+                <a class="hover:opacity-60 transition-opacity" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.599 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"></path></svg>
+                </a>
+                <a class="hover:opacity-60 transition-opacity" href="#">
+                    <svg class="w-5 h-5" fill="currentColor" viewbox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 4-8 4z"></path></svg>
+                </a>
+            </div>
+            <div class="mt-8">
+                <p class="font-['Inter'] text-[10px] tracking-widest uppercase text-[#919191]">©2024 MONOLITH EDITORIAL. ALL RIGHTS RESERVED.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
