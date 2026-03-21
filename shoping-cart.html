@@ -2,13 +2,13 @@
 <html lang="de">
 
 <head>
-	<title>WORLD CUP SHOP | Home</title>
+	<title>Warenkorb | WORLD CUP SHOP</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
-	<meta name="description" content="Offizieller WORLD CUP SHOP mit Trikots, Fanartikeln und internationalen Teams.">
-	<meta property="og:title" content="WORLD CUP SHOP | Trikots, Fanartikel & internationale Teams">
-	<meta property="og:description" content="Offizieller WORLD CUP SHOP mit Trikots, Fanartikeln und internationalen Teams.">
+	<meta name="description" content="Warenkorb im WORLD CUP SHOP: pruefe Artikel, Menge und Gesamtsumme vor dem Checkout.">
+	<meta property="og:title" content="Warenkorb | WORLD CUP SHOP">
+	<meta property="og:description" content="Warenkorb im WORLD CUP SHOP: pruefe Artikel, Menge und Gesamtsumme vor dem Checkout.">
 	<meta property="og:image" content="images/icons/logo-custom.png2.png">
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="WORLD CUP SHOP">
@@ -31,24 +31,26 @@
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
 	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/slick/slick.css">
-	<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="vendor/MagnificPopup/magnific-popup.css">
-	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
 	<!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/custom.css?v=3">
 	<link rel="stylesheet" type="text/css" href="css/product-redesign.css">
 	<!--===============================================================================================-->
+
+	<link rel="stylesheet" type="text/css" href="css/custom.css?v=3">
+	<style>
+		/* Force nav bar to solid black on this page */
+		.header-v4 .wrap-menu-desktop,
+		.header-v4 .top-bar {
+			background-color: #000000 !important;
+		}
+	</style>
 </head>
 <body class="animsition dark-mode">
 
 
-	<h1 style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">WORLD CUP SHOP</h1>
+	<h1 style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Warenkorb</h1>
 
 	<!-- Header -->
 	<header class="header-v4">
@@ -439,344 +441,316 @@
 		</div>
 	</div>
 
-	<!-- Mobile Hero Section (Streetwear Aesthetic) -->
-	<section class="section-slide d-lg-none" style="height: 80vh; position: relative;">
-		<div class="wrap-slick1 rs2-slick1" style="height: 100%;">
-			<div class="slick1" style="height: 100%;">
-				<!-- Item 1 -->
-				<div class="item-slick1"
-					style="background-image: url(images/kurdistan-hero2.png); background-size: cover; background-position: center top; height: 100%;">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full"
-							style="justify-content: flex-end; padding-bottom: 130px; padding-left: 20px;">
-							<span
-								style="font-family: Poppins-Bold; font-size: 14px; text-transform: none; color: #fff; display: block; margin-bottom: 4px; letter-spacing: 0.5px;">New
-								in</span>
-							<h2
-								style="font-family: Poppins-Bold; font-size: 28px; text-transform: uppercase; line-height: 1.1; margin: 0 0 14px 0; color: #fff;">
-								WORLD CUP<br>COLLECTION</h2>
-							<a href="#shop-tabs"
-								class="flex-c-m stext-101 cl2 size-101 bg0 bor1 hov-btn1 p-lr-15 trans-04"
-								style="font-family: Poppins-Bold; border-radius: 0; width: 140px; height: 45px; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: #000 !important; background: #fff !important; text-decoration: none;">SHOP
-								NOW</a>
+
+	<!-- breadcrumb -->
+	<div class="container">
+		<div class="bread-crumb flex-w p-l-25 p-r-15 p-t-30 p-lr-0-lg">
+			<a href="index.html" class="stext-109 cl8 hov-cl1 trans-04">
+				Startseite
+				<i class="fa fa-angle-right m-l-9 m-r-10" aria-hidden="true"></i>
+			</a>
+
+			<span class="stext-109 cl4">
+				Warenkorb
+			</span>
+		</div>
+	</div>
+
+
+	<!-- Shoping Cart -->
+	<form class="bg0 p-t-75 p-b-85">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 col-xl-7 m-lr-auto m-b-50">
+					<div class="m-l-25 m-r--38 m-lr-0-xl">
+						<div class="wrap-table-shopping-cart">
+							<table class="table-shopping-cart">
+								<tr class="table_head">
+									<th class="column-1">Produkt</th>
+									<th class="column-2"></th>
+									<th class="column-3">Preis</th>
+									<th class="column-4">Menge</th>
+									<th class="column-5">Gesamt</th>
+								</tr>
+								<tbody id="cart-page-items"></tbody>
+							</table>
+						</div>
+
+						<div id="cart-empty-msg" style="display:none; text-align:center; padding: 40px 0; color: #888; font-family: Poppins-Regular; font-size: 15px;">
+							Dein Warenkorb ist leer. <a href="product.html" style="color:inherit; text-decoration:underline;">Weiter einkaufen</a>
+						</div>
+
+						<div class="flex-w flex-sb-m bor15 p-t-18 p-b-15 p-lr-40 p-lr-15-sm">
+							<div class="flex-w flex-m m-r-20 m-tb-5">
+								<input class="stext-104 cl2 plh4 size-117 bor13 p-lr-20 m-r-10 m-tb-5" type="text"
+									name="coupon" placeholder="Gutscheincode">
+
+								<div
+									class="flex-c-m stext-101 cl2 size-118 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-5">
+									Gutschein einlösen
+								</div>
+							</div>
+
+							<div
+								class="flex-c-m stext-101 cl2 size-119 bg8 bor13 hov-btn3 p-lr-15 trans-04 pointer m-tb-10">
+								Warenkorb aktualisieren
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- Desktop Hero Section -->
-	<section class="section-slide d-none d-lg-block" style="height: 85vh; position: relative;">
-		<div class="wrap-slick1 rs2-slick1" style="height: 100%;">
-			<div class="slick1" style="height: 100%;">
-				<!-- Item 1 -->
-				<div class="item-slick1"
-					style="background-image: url(images/kurdistan-hero2.png); background-size: cover; background-position: center; height: 100%;">
-					<div class="container h-full">
-						<div class="flex-col-l-m h-full p-t-100 p-b-30"
-							style="justify-content: flex-end; padding-bottom: 80px; padding-left: 20px;">
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInDown" data-delay="0">
-								<span class="ltext-202 cl0 respon2"
-									style="font-family: Poppins-Bold; font-size: 24px; text-transform: uppercase;">
-									New in
+				<div class="col-sm-10 col-lg-7 col-xl-5 m-lr-auto m-b-50">
+					<div class="bor10 p-lr-40 p-t-30 p-b-40 m-l-63 m-r-40 m-lr-0-xl p-lr-15-sm">
+						<h4 class="mtext-109 cl2 p-b-30">
+							Warenkorbsumme
+						</h4>
+
+						<div class="flex-w flex-t bor12 p-b-13">
+							<div class="size-208">
+								<span class="stext-110 cl2">
+									Zwischensumme:
 								</span>
 							</div>
 
-							<div class="layer-slick1 animated visible-false" data-appear="fadeInUp" data-delay="800">
-								<h2 class="ltext-104 cl0 p-t-10 p-b-20 respon1"
-									style="font-family: Poppins-Bold; font-size: 64px; text-transform: uppercase; line-height: 1.0; letter-spacing: -2px;">
-									WORLD CUP<br>COLLECTION
-								</h2>
-							</div>
-
-							<div class="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay="1600">
-								<a href="#shop-tabs"
-									class="flex-c-m stext-101 cl2 size-101 bg0 bor1 hov-btn1 p-lr-15 trans-04"
-									style="font-family: Poppins-Bold; border-radius: 0; width: 220px; height: 60px; font-size: 18px;">
-									SHOP NOW
-								</a>
+							<div class="size-209">
+								<span id="cart-page-subtotal" class="mtext-110 cl2">€0.00</span>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 
-	<!-- Phase 12: Desktop Split Banners -->
-	<section class="d-none d-lg-block">
-		<div class="flex-w flex-str" style="display: flex;">
-			<!-- Left Banner -->
-			<div class="split-banner-item" style="flex: 1; position: relative; overflow: hidden; height: 85vh;">
-				<div class="bg-img-split"
-					style="background-image: url('images/kurdistan-model.png'); width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.8s;">
-				</div>
-				<div class="split-banner-content" style="position: absolute; bottom: 40px; left: 40px;">
-					<h3 class="ltext-104 cl0 p-b-10"
-						style="font-family: Poppins-Bold; font-size: 32px; text-transform: uppercase; color: white;">
-						ESSENTIALS
-					</h3>
-					<a href="#shop-tabs" class="flex-c-m stext-101 cl2 size-101 bg0 bor1 hov-btn1 p-lr-15 trans-04"
-						style="font-family: Poppins-Bold; border-radius: 0; width: 160px; height: 50px;">
-						SHOP NOW
-					</a>
-				</div>
-			</div>
-
-			<!-- Right Banner -->
-			<div class="split-banner-item"
-				style="flex: 1; position: relative; overflow: hidden; height: 85vh; border-left: 1px solid white;">
-				<div class="bg-img-split"
-					style="background-image: url('images/streetwear-split-2.png'); width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.8s;">
-				</div>
-				<div class="split-banner-content" style="position: absolute; bottom: 40px; left: 40px;">
-					<h3 class="ltext-104 cl0 p-b-10"
-						style="font-family: Poppins-Bold; font-size: 32px; text-transform: uppercase; color: white;">
-						NEW ARRIVALS
-					</h3>
-					<a href="#shop-tabs" class="flex-c-m stext-101 cl2 size-101 bg0 bor1 hov-btn1 p-lr-15 trans-04"
-						style="font-family: Poppins-Bold; border-radius: 0; width: 160px; height: 50px;">
-						SHOP NOW
-					</a>
-				</div>
-			</div>
-	</section>
-
-	<!-- Phase 14: Mobile Category Stack (Basics & Footwear) -->
-	<section class="d-lg-none">
-		<!-- Basics Section -->
-		<div class="mobile-category-item">
-			<div class="mobile-category-bg" style="background-image: url('images/mobile-basics.png');"></div>
-			<div style="position: absolute; bottom: 40px; left: 25px;">
-				<h3 class="ltext-104 cl0 p-b-10"
-					style="font-family: Poppins-Bold; font-size: 28px; text-transform: uppercase; color: white;">
-					BASICS
-				</h3>
-				<a href="#shop-tabs" class="flex-c-m stext-101 cl2 size-101 bg0 bor1 hov-btn1 p-lr-15 trans-04"
-					style="font-family: Poppins-Bold; border-radius: 0; width: 140px; height: 45px; text-transform: uppercase;">
-					SHOP NOW
-				</a>
-			</div>
-		</div>
-
-		<!-- Footwear Section -->
-		<div class="mobile-category-item" style="border-top: 1px solid white;">
-			<div class="mobile-category-bg" style="background-image: url('images/mobile-footwear.png');"></div>
-			<div style="position: absolute; bottom: 40px; left: 25px;">
-				<h3 class="ltext-104 cl0 p-b-10"
-					style="font-family: Poppins-Bold; font-size: 28px; text-transform: uppercase; color: white;">
-					FOOTWEAR
-				</h3>
-				<a href="#shop-tabs" class="flex-c-m stext-101 cl2 size-101 bg0 bor1 hov-btn1 p-lr-15 trans-04"
-					style="font-family: Poppins-Bold; border-radius: 0; width: 140px; height: 45px; text-transform: uppercase;">
-					SHOP NOW
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<!-- Phase 13: @WORLD CUP SHOP Gallery (Desktop & Mobile) -->
-	<section style="background-color: transparent; padding: 60px 0 40px 0; border-top: 1px solid var(--border-dark);">
-		<div class="container-fluid">
-			<div class="flex-w flex-sb-m p-lr-40 p-b-30">
-				<h3 class="ltext-104 cl2"
-					style="font-family: Poppins-Bold; font-size: 24px; text-transform: uppercase; letter-spacing: 1px;">
-					@WORLDCUPSHOP
-				</h3>
-				<a href="#" class="stext-101 cl2 hov-cl1 trans-04"
-					style="font-family: Poppins-Bold; border-bottom: 2px solid #000; padding-bottom: 2px; text-transform: uppercase;">
-					FOLLOW US
-				</a>
-			</div>
-
-			<!-- Horizontally Scrollable Gallery -->
-			<div class="horiz-scroll-gallery"
-				style="display: flex; overflow-x: auto; padding-bottom: 20px; -webkit-overflow-scrolling: touch;">
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/gallery-1.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 1">
-				</div>
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/gallery-2.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 2">
-				</div>
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/gallery-3.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 3">
-				</div>
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/gallery-4.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 4">
-				</div>
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/gallery-5.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 5">
-				</div>
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/gallery-6.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 6">
-				</div>
-				<div style="flex: 0 0 250px; margin-right: 15px; aspect-ratio: 1/1; overflow: hidden;">
-					<img loading="lazy" src="images/kurdistan-model.png" style="width: 100%; height: 100%; object-fit: cover;"
-						alt="Streetwear 7">
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Phase 13/14: Responsive Footer -->
-	<!-- Desktop White Footer -->
-	<footer class="p-t-80 p-b-40 d-none d-lg-block"
-		style="background-color: #fff; border-top: 1px solid #eee; color: #000;">
-		<div class="container">
-
-
-			<!-- Footer Accordion-like Links (LFDY Style) -->
-			<footer class="footer-lfdy bg0 p-t-40 p-b-40"
-				style="border-top: 1px solid #222; background-color: #000 !important;">
-				<div class="container text-uppercase"
-					style="font-weight: 700; font-size: 13px; font-family: Poppins-Bold;">
-					<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-						CUSTOMER SERVICE <i class="zmdi zmdi-plus"></i>
-					</div>
-					<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-						COMPANY <i class="zmdi zmdi-plus"></i>
-					</div>
-					<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-						LEGAL <i class="zmdi zmdi-plus"></i>
-					</div>
-					<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-						STORES <i class="zmdi zmdi-plus"></i>
-					</div>
-
-					<div class="flex-sb-m p-t-40"
-						style="font-size: 10px; color: #888; font-family: Poppins-Regular; text-transform: none;">
-						<span>© LIVE FAST DIE YOUNG 2026</span>
-						<div class="flex-w">
-							<i class="zmdi zmdi-facebook m-l-20" style="font-size: 16px; color: #fff;"></i>
-							<i class="zmdi zmdi-instagram m-l-20" style="font-size: 16px; color: #fff;"></i>
-							<i class="zmdi zmdi-twitter m-l-20" style="font-size: 16px; color: #fff;"></i>
+						<div id="cart-page-discount-row" style="display:none;" class="flex-w flex-t p-b-13">
+							<div class="size-208">
+								<span class="stext-110 cl2" style="color:#fa4251;">Matchday-Ersparnis:</span>
+							</div>
+							<div class="size-209">
+								<span id="cart-page-discount" class="mtext-110 cl2" style="color:#fa4251;"></span>
+							</div>
 						</div>
+
+						<div class="flex-w flex-t p-t-27 p-b-33">
+							<div class="size-208">
+								<span class="mtext-101 cl2">
+									Gesamt:
+								</span>
+							</div>
+
+							<div class="size-209 p-t-1">
+								<span id="cart-page-total" class="mtext-110 cl2">€0.00</span>
+							</div>
+						</div>
+
+						<a href="checkout.html" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" style="text-decoration:none;">
+							Zur Kasse gehen
+						</a>
 					</div>
 				</div>
-			</footer>
+			</div>
+		</div>
+	</form>
 
 
-			<!-- Back to top -->
-			<div class="btn-back-to-top" id="myBtn">
-				<span class="symbol-btn-back-to-top">
-					<i class="zmdi zmdi-chevron-up"></i>
-				</span>
+
+
+
+	<!-- Footer Accordion-like Links (LFDY Style) -->
+	<footer class="footer-lfdy bg0 p-t-40 p-b-40"
+		style="border-top: 1px solid #222; background-color: #000 !important;">
+		<div class="container text-uppercase" style="font-weight: 700; font-size: 13px; font-family: Poppins-Bold;">
+			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
+				CUSTOMER SERVICE <i class="zmdi zmdi-plus"></i>
+			</div>
+			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
+				COMPANY <i class="zmdi zmdi-plus"></i>
+			</div>
+			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
+				LEGAL <i class="zmdi zmdi-plus"></i>
+			</div>
+			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
+				STORES <i class="zmdi zmdi-plus"></i>
 			</div>
 
-			<!--===============================================================================================-->
-			<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-			<!--===============================================================================================-->
-			<script src="vendor/animsition/js/animsition.min.js"></script>
-			<!--===============================================================================================-->
-			<script src="vendor/bootstrap/js/popper.js"></script>
-			<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-			<!--===============================================================================================-->
-			<script src="vendor/select2/select2.min.js"></script>
-			<script>
-				$(".js-select2").each(function () {
-					$(this).select2({
-						minimumResultsForSearch: 20,
-						dropdownParent: $(this).next('.dropDownSelect2')
-					});
-				})
-			</script>
-			<!--===============================================================================================-->
-			<script src="vendor/daterangepicker/moment.min.js"></script>
-			<script src="vendor/daterangepicker/daterangepicker.js"></script>
-			<!--===============================================================================================-->
-			<script src="vendor/slick/slick.min.js"></script>
-			<script src="js/slick-custom.js"></script>
-			<!--===============================================================================================-->
-			<script src="vendor/parallax100/parallax100.js"></script>
-			<script>
-				$('.parallax100').parallax100();
-			</script>
-			<!--===============================================================================================-->
-			<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
-			<script>
-				$('.gallery-lb').each(function () { // the containers for all your galleries
-					$(this).magnificPopup({
-						delegate: 'a', // the selector for gallery item
-						type: 'image',
-						gallery: {
-							enabled: true
-						},
-						mainClass: 'mfp-fade'
-					});
+			<div class="flex-sb-m p-t-40"
+				style="font-size: 10px; color: #888; font-family: Poppins-Regular; text-transform: none;">
+				<span>© LIVE FAST DIE YOUNG 2026</span>
+				<div class="flex-w">
+					<i class="zmdi zmdi-facebook m-l-20" style="font-size: 16px; color: #fff;"></i>
+					<i class="zmdi zmdi-instagram m-l-20" style="font-size: 16px; color: #fff;"></i>
+					<i class="zmdi zmdi-twitter m-l-20" style="font-size: 16px; color: #fff;"></i>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- Back to top -->
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top">
+			<i class="zmdi zmdi-chevron-up"></i>
+		</span>
+	</div>
+
+	<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+	<script>
+		$(".js-select2").each(function () {
+			$(this).select2({
+				minimumResultsForSearch: 20,
+				dropdownParent: $(this).next('.dropDownSelect2')
+			});
+		})
+	</script>
+	<!--===============================================================================================-->
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<!--===============================================================================================-->
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function () {
+			$(this).css('position', 'relative');
+			$(this).css('overflow', 'hidden');
+			var ps = new PerfectScrollbar(this, {
+				wheelSpeed: 1,
+				scrollingThreshold: 1000,
+				wheelPropagation: false,
+			});
+
+			$(window).on('resize', function () {
+				ps.update();
+			})
+		});
+	</script>
+	<!--===============================================================================================-->
+	<script src="data/products.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="js/bundle.js"></script>
+	<script src="js/shop.js"></script>
+	<script src="js/main.js"></script>
+	<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		function renderCartPage() {
+			var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
+			var tbody = document.getElementById('cart-page-items');
+			var emptyMsg = document.getElementById('cart-empty-msg');
+			var subtotalEl = document.getElementById('cart-page-subtotal');
+			var totalEl = document.getElementById('cart-page-total');
+			var discountRow = document.getElementById('cart-page-discount-row');
+			var discountEl = document.getElementById('cart-page-discount');
+
+			tbody.innerHTML = '';
+
+			if (!cartData.length) {
+				emptyMsg.style.display = 'block';
+				subtotalEl.textContent = '€0.00';
+				totalEl.textContent = '€0.00';
+				return;
+			}
+
+			emptyMsg.style.display = 'none';
+			var subtotal = 0;
+
+			cartData.forEach(function (item, idx) {
+				var p = item.product;
+				var price = (p.discountedPrice !== undefined) ? p.discountedPrice : (p.price || 0);
+				var lineTotal = price * item.qty;
+				subtotal += lineTotal;
+
+				var tr = document.createElement('tr');
+				tr.className = 'table_row';
+				tr.setAttribute('data-id', p.id);
+				tr.innerHTML =
+					'<td class="column-1"><div class="how-itemcart1">' +
+						'<img loading="lazy" src="' + (p.image || '') + '" alt="' + (p.name || '') + '">' +
+					'</div></td>' +
+					'<td class="column-2">' + (p.name || '') + '</td>' +
+					'<td class="column-3">€' + price.toFixed(2) + '</td>' +
+					'<td class="column-4">' +
+						'<div class="wrap-num-product flex-w m-l-auto m-r-0">' +
+							'<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m cart-page-minus" data-id="' + p.id + '">' +
+								'<i class="fs-16 zmdi zmdi-minus"></i>' +
+							'</div>' +
+							'<input class="mtext-104 cl3 txt-center num-product cart-page-qty" type="number" value="' + item.qty + '" min="1" data-id="' + p.id + '">' +
+							'<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m cart-page-plus" data-id="' + p.id + '">' +
+								'<i class="fs-16 zmdi zmdi-plus"></i>' +
+							'</div>' +
+						'</div>' +
+					'</td>' +
+					'<td class="column-5 cart-page-line-total">€' + lineTotal.toFixed(2) + '</td>';
+
+				tbody.appendChild(tr);
+			});
+
+			// Totals
+			var discount = (window.BundleEngine && window.BundleEngine.getDiscount) ? window.BundleEngine.getDiscount() : 0;
+			subtotalEl.textContent = '€' + subtotal.toFixed(2);
+			if (discount > 0) {
+				discountRow.style.display = '';
+				discountEl.textContent = '- €' + discount.toFixed(2);
+				totalEl.textContent = '€' + (subtotal - discount).toFixed(2);
+			} else {
+				discountRow.style.display = 'none';
+				totalEl.textContent = '€' + subtotal.toFixed(2);
+			}
+
+			// Bind +/- buttons
+			tbody.querySelectorAll('.cart-page-minus').forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					var id = this.getAttribute('data-id');
+					var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
+					var item = cartData.find(function (i) { return i.product.id === id; });
+					if (item) {
+						item.qty -= 1;
+						if (item.qty <= 0) {
+							cartData = cartData.filter(function (i) { return i.product.id !== id; });
+						}
+						localStorage.setItem('wcs_cart', JSON.stringify(cartData));
+						if (typeof updateCartUI === 'function') updateCartUI();
+						renderCartPage();
+					}
 				});
-			</script>
-			<!--===============================================================================================-->
-			<script src="vendor/isotope/isotope.pkgd.min.js"></script>
-			<!--===============================================================================================-->
-			<script src="vendor/sweetalert/sweetalert.min.js"></script>
-			<script>
-				$('.js-addwish-b2').on('click', function (e) {
-					e.preventDefault();
+			});
+
+			tbody.querySelectorAll('.cart-page-plus').forEach(function (btn) {
+				btn.addEventListener('click', function () {
+					var id = this.getAttribute('data-id');
+					var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
+					var item = cartData.find(function (i) { return i.product.id === id; });
+					if (item) {
+						item.qty += 1;
+						localStorage.setItem('wcs_cart', JSON.stringify(cartData));
+						if (typeof updateCartUI === 'function') updateCartUI();
+						renderCartPage();
+					}
 				});
+			});
 
-				$('.js-addwish-b2').each(function () {
-					var nameProduct = $(this).parent().parent().find('.js-name-b2').html();
-					$(this).on('click', function () {
-						swal(nameProduct, "is added to wishlist !", "success");
-
-						$(this).addClass('js-addedwish-b2');
-						$(this).off('click');
-					});
+			tbody.querySelectorAll('.cart-page-qty').forEach(function (input) {
+				input.addEventListener('change', function () {
+					var id = this.getAttribute('data-id');
+					var newQty = parseInt(this.value, 10);
+					var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
+					if (newQty <= 0) {
+						cartData = cartData.filter(function (i) { return i.product.id !== id; });
+					} else {
+						var item = cartData.find(function (i) { return i.product.id === id; });
+						if (item) item.qty = newQty;
+					}
+					localStorage.setItem('wcs_cart', JSON.stringify(cartData));
+					if (typeof updateCartUI === 'function') updateCartUI();
+					renderCartPage();
 				});
+			});
+		}
 
-				$('.js-addwish-detail').each(function () {
-					var nameProduct = $(this).parent().parent().parent().find('.js-name-detail').html();
-
-					$(this).on('click', function () {
-						swal(nameProduct, "is added to wishlist !", "success");
-
-						$(this).addClass('js-addedwish-detail');
-						$(this).off('click');
-					});
-				});
-
-				/*---------------------------------------------*/
-
-				$('.js-addcart-detail').each(function () {
-					var nameProduct = $(this).parent().parent().parent().parent().find('.js-name-detail').html();
-					$(this).on('click', function () {
-						swal(nameProduct, "is added to cart !", "success");
-					});
-				});
-
-			</script>
-			<!--===============================================================================================-->
-			<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
-			<script>
-				$('.js-pscroll').each(function () {
-					$(this).css('position', 'relative');
-					$(this).css('overflow', 'hidden');
-					var ps = new PerfectScrollbar(this, {
-						wheelSpeed: 1,
-						scrollingThreshold: 1000,
-						wheelPropagation: false,
-					});
-
-					$(window).on('resize', function () {
-						ps.update();
-					})
-				});
-			</script>
-			<!--===============================================================================================-->
-			<script src="data/products.js"></script>
-			<script src="js/shop.js"></script>
-			<script src="js/cart.js"></script>
-			<script src="js/bundle.js"></script>
-			<script src="js/main.js"></script>
-
+		renderCartPage();
+	});
+	</script>
 </body>
 
 </html>
+
 

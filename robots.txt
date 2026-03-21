@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Disallow: /vendor/
+Disallow: /fonts/
+
+Sitemap: sitemap.xml

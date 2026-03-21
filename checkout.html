@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Kasse | WORLD CUP SHOP</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Sicher bezahlen im WORLD CUP SHOP – gib deine Lieferadresse ein und wähle deine Zahlungsart.">
+	<meta property="og:title" content="Kasse | WORLD CUP SHOP">
+	<meta property="og:description" content="Sicher bezahlen im WORLD CUP SHOP.">
+	<meta property="og:image" content="images/icons/logo-custom.png2.png">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="WORLD CUP SHOP">
+
+	<link rel="icon" type="image/png" href="images/icons/favicon.png" />
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/iconic/css/material-design-iconic-font.min.css">
+	<link rel="stylesheet" type="text/css" href="fonts/linearicons-v1.0.0/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+	<link rel="stylesheet" type="text/css" href="vendor/perfect-scrollbar/perfect-scrollbar.css">
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/product-redesign.css">
+	<link rel="stylesheet" type="text/css" href="css/custom.css?v=3">
+
+	<style>
+		/* ── Page base ── */
+		body { background: #000; color: #fff; }
+
+		/* ── Breadcrumb ── */
+		.checkout-breadcrumb {
+			display: flex;
+			align-items: center;
+			gap: 8px;
+			font-family: Poppins-Regular;
+			font-size: 13px;
+			color: #666;
+			margin-bottom: 32px;
+		}
+		.checkout-breadcrumb a { color: #aaa; text-decoration: none; transition: color .2s; }
+		.checkout-breadcrumb a:hover { color: #fff; }
+		.checkout-breadcrumb .sep { color: #444; }
+		.checkout-breadcrumb .active { color: #fff; font-family: Poppins-Medium; }
+
+		/* ── Section headings ── */
+		.checkout-section-title {
+			font-family: Poppins-Bold;
+			font-size: 13px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			color: #fff;
+			margin: 0 0 18px 0;
+			padding-bottom: 12px;
+			border-bottom: 1px solid #222;
+		}
+
+		/* ── Form fields ── */
+		.checkout-field {
+			margin-bottom: 14px;
+		}
+		.checkout-field label {
+			display: block;
+			font-family: Poppins-Medium;
+			font-size: 11px;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			color: #888;
+			margin-bottom: 6px;
+		}
+		.checkout-field input,
+		.checkout-field select {
+			width: 100%;
+			background: #111;
+			border: 1px solid #2a2a2a;
+			color: #fff;
+			font-family: Poppins-Regular;
+			font-size: 14px;
+			padding: 12px 15px;
+			outline: none;
+			transition: border-color .2s;
+			border-radius: 2px;
+			-webkit-appearance: none;
+		}
+		.checkout-field input::placeholder { color: #444; }
+		/* suppress browser autofill / password-manager icons */
+		#field-street::-webkit-contacts-auto-fill-button,
+		#field-street::-webkit-credentials-auto-fill-button { display:none !important; visibility:hidden !important; pointer-events:none !important; width:0 !important; height:0 !important; }
+		#field-street { background-image: none !important; }
+		.checkout-field input:focus,
+		.checkout-field select:focus { border-color: #555; }
+		.checkout-field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px; }
+		.checkout-field select option { background: #111; color: #fff; }
+
+		/* ── Inline field pair ── */
+		.field-row { display: flex; gap: 12px; }
+		.field-row .checkout-field { flex: 1; }
+
+		/* ── Payment options ── */
+		.payment-option {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			padding: 14px 16px;
+			border: 1px solid #2a2a2a;
+			border-radius: 2px;
+			cursor: pointer;
+			margin-bottom: 10px;
+			transition: border-color .2s, background .2s;
+			background: #0d0d0d;
+		}
+		.payment-option:hover { border-color: #555; }
+		.payment-option.selected { border-color: #fff; background: #111; }
+		.payment-option input[type="radio"] { display: none; }
+		.payment-radio-dot {
+			width: 18px; height: 18px;
+			border: 2px solid #444;
+			border-radius: 50%;
+			flex-shrink: 0;
+			display: flex; align-items: center; justify-content: center;
+			transition: border-color .2s;
+		}
+		.payment-option.selected .payment-radio-dot { border-color: #fff; }
+		.payment-radio-dot::after {
+			content: '';
+			width: 8px; height: 8px;
+			border-radius: 50%;
+			background: #fff;
+			display: none;
+		}
+		.payment-option.selected .payment-radio-dot::after { display: block; }
+		.payment-label {
+			font-family: Poppins-Medium;
+			font-size: 14px;
+			color: #fff;
+			flex: 1;
+		}
+		.payment-icon {
+			font-size: 22px;
+			color: #888;
+			width: 32px;
+			text-align: center;
+		}
+		.payment-logos { display: flex; gap: 6px; align-items: center; }
+		.payment-logos img { height: 22px; opacity: .8; }
+
+		/* ── Card fields panel ── */
+		#card-fields-panel { display: none; margin-top: 4px; margin-bottom: 6px; }
+		#card-fields-panel.visible { display: block; }
+		.card-panel-inner {
+			border: 1px solid #2a2a2a;
+			border-radius: 2px;
+			padding: 18px 16px 8px;
+			background: #0d0d0d;
+		}
+		.card-row-icons { display: flex; gap: 6px; margin-bottom: 14px; }
+		.card-row-icons span {
+			background: #1a1a1a;
+			border: 1px solid #2a2a2a;
+			border-radius: 3px;
+			padding: 3px 8px;
+			font-size: 11px;
+			font-family: Poppins-Bold;
+			color: #888;
+			letter-spacing: 1px;
+		}
+
+		/* ── PayPal panel ── */
+		#paypal-panel { display: none; margin-top: 4px; margin-bottom: 6px; }
+		#paypal-panel.visible { display: block; }
+		.paypal-info {
+			border: 1px solid #1a3a5c;
+			background: #0a1929;
+			border-radius: 2px;
+			padding: 16px;
+			font-family: Poppins-Regular;
+			font-size: 13px;
+			color: #7eb3e0;
+			display: flex;
+			align-items: center;
+			gap: 12px;
+		}
+		.paypal-info i { font-size: 22px; }
+
+		/* ── Bank transfer panel ── */
+		#bank-panel { display: none; margin-top: 4px; margin-bottom: 6px; }
+		#bank-panel.visible { display: block; }
+		.bank-info {
+			border: 1px solid #2a2a2a;
+			background: #0d0d0d;
+			border-radius: 2px;
+			padding: 16px;
+			font-family: Poppins-Regular;
+			font-size: 13px;
+			color: #aaa;
+		}
+		.bank-info table { width: 100%; border-collapse: collapse; }
+		.bank-info td { padding: 5px 0; }
+		.bank-info td:first-child { color: #666; font-size: 12px; width: 130px; }
+		.bank-info td:last-child { color: #fff; font-family: Poppins-Medium; }
+
+		/* ── Order summary sidebar ── */
+		.order-summary-box {
+			background: #0d0d0d;
+			border: 1px solid #1e1e1e;
+			border-radius: 2px;
+			padding: 24px 20px;
+			position: sticky;
+			top: 160px;
+		}
+		.order-item {
+			display: flex;
+			align-items: center;
+			gap: 14px;
+			padding: 12px 0;
+			border-bottom: 1px solid #1a1a1a;
+		}
+		.order-item:last-child { border-bottom: none; }
+		.order-item-img-wrap {
+			position: relative;
+			flex-shrink: 0;
+		}
+		.order-item-img-wrap img {
+			width: 56px; height: 56px;
+			object-fit: cover;
+			border: 1px solid #222;
+			border-radius: 2px;
+		}
+		.order-item-qty-badge {
+			position: absolute;
+			top: -6px; right: -6px;
+			background: #555;
+			color: #fff;
+			font-size: 10px;
+			font-family: Poppins-Bold;
+			width: 18px; height: 18px;
+			border-radius: 50%;
+			display: flex; align-items: center; justify-content: center;
+		}
+		.order-item-name {
+			flex: 1;
+			font-family: Poppins-Medium;
+			font-size: 13px;
+			color: #ddd;
+			line-height: 1.4;
+		}
+		.order-item-price {
+			font-family: Poppins-Bold;
+			font-size: 13px;
+			color: #fff;
+			white-space: nowrap;
+		}
+		.order-totals { margin-top: 16px; }
+		.order-total-row {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			padding: 8px 0;
+			font-family: Poppins-Regular;
+			font-size: 13px;
+			color: #888;
+			border-bottom: 1px solid #1a1a1a;
+		}
+		.order-total-row:last-child { border-bottom: none; }
+		.order-total-row.grand {
+			font-family: Poppins-Bold;
+			font-size: 16px;
+			color: #fff;
+			padding-top: 14px;
+			margin-top: 4px;
+		}
+		.order-total-row.grand span:last-child { font-size: 18px; }
+		.order-discount-row { color: #5cb85c; }
+
+		/* ── Submit button ── */
+		.btn-place-order {
+			width: 100%;
+			padding: 16px;
+			background: #fff;
+			color: #000;
+			font-family: Poppins-Bold;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 2px;
+			border: none;
+			cursor: pointer;
+			transition: background .2s, color .2s;
+			margin-top: 20px;
+			border-radius: 2px;
+		}
+		.btn-place-order:hover { background: #e0e0e0; }
+
+		/* ── Security badge ── */
+		.secure-badge {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 6px;
+			margin-top: 12px;
+			font-family: Poppins-Regular;
+			font-size: 11px;
+			color: #555;
+		}
+		.secure-badge i { font-size: 13px; color: #4caf50; }
+
+		/* ── Error state ── */
+		.checkout-field input.error,
+		.checkout-field select.error { border-color: #c0392b !important; }
+		.field-error-msg {
+			font-family: Poppins-Regular;
+			font-size: 11px;
+			color: #e74c3c;
+			margin-top: 4px;
+			display: none;
+		}
+		.checkout-field input.error + .field-error-msg,
+		.checkout-field select.error + .field-error-msg { display: block; }
+
+		/* ── Success overlay ── */
+		#order-success-overlay {
+			display: none;
+			position: fixed;
+			inset: 0;
+			background: rgba(0,0,0,0.97);
+			z-index: 9999;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			text-align: center;
+			padding: 20px;
+		}
+		#order-success-overlay.show { display: flex; }
+		.success-checkmark {
+			width: 72px; height: 72px;
+			border-radius: 50%;
+			background: #1a3a1a;
+			border: 2px solid #4caf50;
+			display: flex; align-items: center; justify-content: center;
+			font-size: 32px;
+			color: #4caf50;
+			margin-bottom: 24px;
+			animation: popIn .4s ease;
+		}
+		@keyframes popIn {
+			from { transform: scale(0.5); opacity: 0; }
+			to { transform: scale(1); opacity: 1; }
+		}
+		.success-title {
+			font-family: Poppins-Bold;
+			font-size: 28px;
+			letter-spacing: 3px;
+			text-transform: uppercase;
+			color: #fff;
+			margin-bottom: 10px;
+		}
+		.success-subtitle {
+			font-family: Poppins-Regular;
+			font-size: 15px;
+			color: #888;
+			max-width: 400px;
+			line-height: 1.6;
+			margin-bottom: 32px;
+		}
+		.success-order-nr {
+			font-family: Poppins-Medium;
+			font-size: 13px;
+			color: #aaa;
+			margin-bottom: 32px;
+		}
+		.success-order-nr span { color: #fff; font-family: Poppins-Bold; }
+
+		/* ── Responsive ── */
+		@media (max-width: 767px) {
+			.field-row { flex-direction: column; gap: 0; }
+			.order-summary-box { margin-top: 32px; position: static; }
+		}
+	</style>
+</head>
+
+<body class="animsition dark-mode">
+
+	<h1 style="position:absolute;left:-10000px;top:auto;width:1px;height:1px;overflow:hidden;">Kasse</h1>
+
+	<!-- ═══════════ HEADER ═══════════ -->
+	<header class="header-v4">
+		<div class="container-menu-desktop">
+			<div class="top-bar">
+				<div class="content-topbar flex-sb-m h-full container"
+					style="justify-content:space-between;font-family:Poppins-Medium;">
+					<div class="left-top-bar" style="color:white;font-size:11px;">Höchste Qualität seit 2018</div>
+					<div class="center-top-bar" style="color:white;font-size:11px;">Internationaler Versand</div>
+					<div class="right-top-bar flex-w h-full">
+						<div class="flex-c-m trans-04 p-lr-25" style="color:white;border:none;font-size:11px;">Rückgabe leicht gemacht</div>
+					</div>
+				</div>
+			</div>
+			<div class="wrap-menu-desktop how-shadow1">
+				<nav class="limiter-menu-desktop container">
+					<a href="index.html" class="logo"><img src="images/icons/logo-custom.png2.png" alt="WORLD CUP SHOP"></a>
+					<div class="menu-desktop">
+						<ul class="main-menu js-desktop-nations"></ul>
+					</div>
+					<div class="wrap-icon-header flex-w flex-r-m"
+						style="font-family:Poppins-Medium;font-size:13px;text-transform:uppercase;">
+						<button type="button" class="cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-modal-search pointer"
+							style="color:white;margin-right:15px;">SEARCH</button>
+						<a href="anmelden.html" class="cl2 hov-cl1 trans-04 p-l-22 p-r-11"
+							style="color:white;margin-right:15px;text-decoration:none;">ACCOUNT</a>
+						<a href="support.html" class="cl2 hov-cl1 trans-04 p-l-22 p-r-11"
+							style="color:white;margin-right:15px;text-decoration:none;">LOYALTY</a>
+						<div class="cl2 hov-cl1 trans-04 p-l-22 p-r-11 js-show-cart pointer" data-notify="0"
+							style="color:white;padding-right:0;">CART (<span class="js-cart-header-count">0</span>)
+						</div>
+					</div>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Mobile top bar -->
+		<div class="mobile-top-bar d-lg-none"
+			style="position:absolute;top:0;left:0;width:100%;height:30px;background-color:#000;z-index:1001;overflow:hidden;display:flex;align-items:center;">
+			<style>
+				.ticker-track { display:flex;white-space:nowrap;animation:ticker-scroll 28s linear infinite;font-size:11px;text-transform:uppercase;color:#fff;letter-spacing:1px }
+				.ticker-track span { display:inline-block;padding:0 28px }
+				.ticker-track .ticker-dot { padding:0;opacity:.5 }
+				@keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+			</style>
+			<div class="ticker-track"><span>International Shipping</span><span class="ticker-dot">·</span><span>Easy Returns</span><span class="ticker-dot">·</span><span>Höchste Qualität seit 2018</span><span class="ticker-dot">·</span><span>Kostenlose Rückgabe</span><span class="ticker-dot">·</span><span>International Shipping</span><span class="ticker-dot">·</span><span>Easy Returns</span><span class="ticker-dot">·</span><span>Höchste Qualität seit 2018</span><span class="ticker-dot">·</span><span>Kostenlose Rückgabe</span><span class="ticker-dot">·</span></div>
+		</div>
+
+		<!-- Mobile header -->
+		<div class="wrap-header-mobile d-lg-none"
+			style="position:absolute;top:30px;left:0;width:100%;height:60px;z-index:1000;background-color:transparent;display:flex;justify-content:space-between;align-items:center;padding:0 15px;">
+			<div class="header-mobile-left" style="display:flex;align-items:center;z-index:1005;">
+				<div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r-20" style="padding:0;"><span class="hamburger-box"><span class="hamburger-inner"></span></span></div>
+				<div class="icon-header-item cl0 hov-cl1 trans-04 js-show-modal-search" style="color:white;font-size:20px;padding:0;"><i class="zmdi zmdi-search"></i></div>
+			</div>
+			<div class="logo-mobile"><a href="index.html"><img loading="lazy" src="images/icons/logo-custom.png2.png" alt="WORLD CUP SHOP"></a></div>
+			<div class="header-mobile-right" style="display:flex;justify-content:flex-end;align-items:center;z-index:1005;">
+				<div class="icon-header-item cl0 hov-cl1 trans-04 js-show-cart" style="color:white;font-size:22px;padding:0;"><i class="zmdi zmdi-mall"></i></div>
+			</div>
+		</div>
+
+		<!-- Sidebar menu -->
+		<div class="wrap-sidebar-menu js-panel-sidebar">
+			<div class="s-full js-hide-sidebar"></div>
+			<div class="sidebar-menu flex-col-l p-l-40 p-r-25 p-t-30 p-b-40">
+				<div class="flex-w flex-sb-m p-b-30 w-full" style="justify-content:flex-start;">
+					<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-sidebar" style="margin-left:-10px;"><i class="zmdi zmdi-close"></i></div>
+				</div>
+				<div class="sidebar-menu-content flex-w js-pscroll w-full">
+					<ul class="sidebar-menu-wrapitem w-full js-sidebar-nations"></ul>
+				</div>
+				<div class="w-full p-t-40">
+					<a href="anmelden.html" class="flex-c-m stext-101 cl2 size-104 bg-transparent hov-btn1 p-lr-15 trans-04 flex-w flex-l-m m-b-20"
+						style="justify-content:flex-start;padding-left:0;font-family:Poppins-Bold;text-transform:uppercase;letter-spacing:2px;">
+						<i class="zmdi zmdi-account-o fs-20 m-r-10"></i> ANMELDEN
+					</a>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Search -->
+		<div class="modal-search-header flex-c-m trans-04 js-hide-modal-search"
+			style="align-items:flex-start;background-color:rgba(0,0,0,0.95);backdrop-filter:blur(10px);z-index:10000;">
+			<div class="container-search-header"
+				style="width:100%;max-width:100%;padding:40px 15% 60px 15%;background:#000;border-bottom:1px solid #222;">
+				<div style="display:flex;align-items:center;justify-content:space-between;position:relative;padding-bottom:15px;border-bottom:2px solid #333;">
+					<div style="display:flex;align-items:center;flex:1;">
+						<i class="zmdi zmdi-search" style="font-size:24px;color:#888;margin-right:15px;"></i>
+						<input id="nation-search-input" type="text" autocomplete="off" placeholder="What are you searching for?"
+							style="background:transparent;border:none;font-family:Poppins-Regular;font-size:20px;color:#fff;width:100%;outline:none;caret-color:#fff;">
+					</div>
+					<button class="js-hide-modal-search" style="background:none;border:none;color:#888;font-size:30px;cursor:pointer;transition:color 0.3s;margin-left:20px;">
+						<i class="zmdi zmdi-close"></i>
+					</button>
+				</div>
+				<div style="margin-top:25px;display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+					<span style="font-family:Poppins-Bold;color:#fff;font-size:13px;text-transform:uppercase;letter-spacing:1px;">Highlights:</span>
+					<a href="nation.html?nation=tr" style="font-family:Poppins-Medium;color:#888;font-size:13px;text-transform:uppercase;letter-spacing:1px;text-decoration:none;">TÜRKEI</a>
+					<a href="nation.html?nation=de" style="font-family:Poppins-Medium;color:#888;font-size:13px;text-transform:uppercase;letter-spacing:1px;text-decoration:none;">DEUTSCHLAND</a>
+					<a href="nation.html?nation=br" style="font-family:Poppins-Medium;color:#888;font-size:13px;text-transform:uppercase;letter-spacing:1px;text-decoration:none;">BRASILIEN</a>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- ═══════════ CART DRAWER ═══════════ -->
+	<div class="wrap-header-cart js-panel-cart">
+		<div class="s-full js-hide-cart"></div>
+		<div class="header-cart flex-col-l p-l-65 p-r-25">
+			<div class="header-cart-title flex-w flex-sb-m p-b-8">
+				<span class="mtext-103 cl2">Warenkorb</span>
+				<div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-cart"><i class="zmdi zmdi-close"></i></div>
+			</div>
+			<div class="header-cart-content js-pscroll">
+				<ul class="header-cart-wrapitem w-full"></ul>
+				<div class="w-full flex-sb-m flex-w p-t-20 p-b-10 bor9">
+					<span class="stext-108 cl8 p-r-10">Zwischensumme</span>
+					<span class="mtext-107 cl2 js-cart-total-price">€0.00</span>
+				</div>
+				<div class="w-full flex-c-m flex-w p-t-10">
+					<a href="shoping-cart.html" class="flex-c-m stext-101 cl2 size-107 bg8 bor9 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">Warenkorb</a>
+					<a href="checkout.html" class="flex-c-m stext-101 cl0 size-107 bg3 bor9 hov-btn3 p-lr-15 trans-04 m-b-10">Kasse</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- ═══════════ MAIN CONTENT ═══════════ -->
+	<div style="padding-top: 160px; padding-bottom: 60px; min-height: 80vh;">
+		<div class="container">
+
+			<!-- Breadcrumb -->
+			<div class="checkout-breadcrumb">
+				<a href="index.html">Shop</a>
+				<span class="sep">›</span>
+				<a href="shoping-cart.html">Warenkorb</a>
+				<span class="sep">›</span>
+				<span class="active">Kasse</span>
+			</div>
+
+			<div class="row">
+
+				<!-- ── LEFT: Form ── -->
+				<div class="col-lg-7 col-12" style="padding-right: 30px;">
+
+					<!-- Kontakt -->
+					<div style="margin-bottom:24px;">
+						<p class="checkout-section-title">Kontakt</p>
+						<div class="checkout-field">
+							<label>E-Mail-Adresse *</label>
+							<input type="email" id="field-email" placeholder="max@beispiel.de" autocomplete="email">
+							<div class="field-error-msg">Bitte gültige E-Mail eingeben.</div>
+						</div>
+					</div>
+
+					<!-- Lieferung -->
+					<div style="margin-bottom:24px;">
+						<p class="checkout-section-title">Lieferung</p>
+
+						<div class="checkout-field">
+							<label>Land / Region</label>
+							<select id="field-country" autocomplete="country">
+								<option value="">– Land auswählen –</option>
+								<option value="DE" selected>🇩🇪 Deutschland</option>
+								<option value="AT">🇦🇹 Österreich</option>
+								<option value="CH">🇨🇭 Schweiz</option>
+								<option value="TR">🇹🇷 Türkei</option>
+								<option value="NL">🇳🇱 Niederlande</option>
+								<option value="BE">🇧🇪 Belgien</option>
+								<option value="FR">🇫🇷 Frankreich</option>
+								<option value="IT">🇮🇹 Italien</option>
+								<option value="ES">🇪🇸 Spanien</option>
+								<option value="PL">🇵🇱 Polen</option>
+								<option value="GB">🇬🇧 Vereinigtes Königreich</option>
+								<option value="US">🇺🇸 USA</option>
+								<option value="OTHER">Anderes Land</option>
+							</select>
+							<div class="field-error-msg">Bitte Land auswählen.</div>
+						</div>
+
+						<div class="field-row">
+							<div class="checkout-field">
+								<label>Vorname *</label>
+								<input type="text" id="field-firstname" placeholder="Max" autocomplete="given-name">
+								<div class="field-error-msg">Bitte Vorname eingeben.</div>
+							</div>
+							<div class="checkout-field">
+								<label>Nachname *</label>
+								<input type="text" id="field-lastname" placeholder="Mustermann" autocomplete="family-name">
+								<div class="field-error-msg">Bitte Nachname eingeben.</div>
+							</div>
+						</div>
+
+						<div class="checkout-field">
+							<label>Firma (optional)</label>
+							<input type="text" id="field-company" placeholder="Muster GmbH" autocomplete="organization">
+						</div>
+
+						<div class="checkout-field" style="position:relative;">
+							<label>Adresse *</label>
+							<input type="text" id="field-street" placeholder="Musterstraße 1" autocomplete="off" data-lpignore="true" data-1p-ignore="true" data-bwignore="true" data-form-type="other" readonly onfocus="this.removeAttribute('readonly')">
+							<div class="field-error-msg">Bitte Adresse eingeben.</div>
+						</div>
+
+
+						<div class="field-row">
+							<div class="checkout-field">
+								<label>Postleitzahl *</label>
+								<input type="text" id="field-zip" placeholder="12345" autocomplete="postal-code">
+								<div class="field-error-msg">Bitte PLZ eingeben.</div>
+							</div>
+							<div class="checkout-field" style="flex:2;">
+								<label>Stadt *</label>
+								<input type="text" id="field-city" placeholder="Berlin" autocomplete="address-level2">
+								<div class="field-error-msg">Bitte Stadt eingeben.</div>
+							</div>
+						</div>
+
+						<div class="checkout-field">
+							<label>Telefon (optional)</label>
+							<input type="tel" id="field-phone" placeholder="+49 123 456789" autocomplete="tel">
+						</div>
+
+						<label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-family:Poppins-Regular;font-size:13px;color:#888;margin-top:6px;margin-bottom:4px;">
+							<input type="checkbox" id="save-info" style="margin-top:3px;flex-shrink:0;width:15px;height:15px;accent-color:#fff;">
+							<span>Meine Informationen speichern und nächstes Mal schneller bezahlen</span>
+						</label>
+					</div>
+
+					<!-- Payment -->
+					<div style="margin-bottom: 32px;">
+						<p class="checkout-section-title">Zahlungsart</p>
+
+						<div style="margin-bottom:6px;">
+							<button type="button" onclick="selectPayment('paypal'); submitOrder(event);" style="width:100%;background:#FFC439;border:none;border-radius:6px;padding:16px 20px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:4px;transition:background .2s;" onmouseover="this.style.background='#f0b429'" onmouseout="this.style.background='#FFC439'">
+								<span style="font-family:Arial,sans-serif;font-weight:900;font-size:22px;color:#003087;letter-spacing:-0.5px;">Pay</span><span style="font-family:Arial,sans-serif;font-weight:900;font-size:22px;color:#009cde;letter-spacing:-0.5px;">Pal</span>
+							</button>
+							<p style="text-align:center;font-family:Poppins-Regular;font-size:11px;color:#555;margin:8px 0 0;">Du wirst sicher zu PayPal weitergeleitet.</p>
+						</div>
+
+						<div style="display:flex;align-items:center;gap:12px;margin:20px 0;">
+							<div style="flex:1;height:1px;background:#222;"></div>
+							<span style="font-family:Poppins-Regular;font-size:12px;color:#555;white-space:nowrap;">Oder zahle mit</span>
+							<div style="flex:1;height:1px;background:#222;"></div>
+						</div>
+
+						<div class="payment-option selected" data-method="card" onclick="selectPayment('card')">
+							<input type="radio" name="payment" value="card" checked>
+							<div class="payment-radio-dot"></div>
+							<i class="fa fa-credit-card payment-icon"></i>
+							<span class="payment-label">Kreditkarte</span>
+							<div class="payment-logos">
+								<span style="background:#1a1a4e;color:#fff;font-family:Poppins-Bold;font-size:11px;padding:3px 7px;border-radius:3px;letter-spacing:0;">VISA</span>
+								<span style="background:#1a1a1a;color:#eb001b;font-family:Poppins-Bold;font-size:10px;padding:3px 6px;border-radius:3px;letter-spacing:0;">MC</span>
+								<span style="background:#003087;color:#fff;font-family:Poppins-Bold;font-size:10px;padding:3px 6px;border-radius:3px;letter-spacing:0;">AMEX</span>
+							</div>
+						</div>
+
+						<div id="card-fields-panel" class="visible">
+							<div class="card-panel-inner">
+								<div class="card-row-icons">
+									<span>VISA</span><span style="color:#eb001b;">MC</span><span style="color:#2566af;">AMEX</span>
+								</div>
+								<div class="checkout-field">
+									<label>Karteninhaber *</label>
+									<input type="text" id="field-card-name" placeholder="MAX MUSTERMANN" autocomplete="cc-name" style="text-transform:uppercase;">
+									<div class="field-error-msg">Bitte Namen eingeben.</div>
+								</div>
+								<div class="checkout-field">
+									<label>Kartennummer *</label>
+									<input type="text" id="field-card-number" placeholder="0000 0000 0000 0000" autocomplete="cc-number" maxlength="19" inputmode="numeric">
+									<div class="field-error-msg">Bitte gültige Kartennummer eingeben.</div>
+								</div>
+								<div class="field-row">
+									<div class="checkout-field">
+										<label>Ablaufdatum *</label>
+										<input type="text" id="field-card-expiry" placeholder="MM / JJ" autocomplete="cc-exp" maxlength="7" inputmode="numeric">
+										<div class="field-error-msg">Bitte Datum eingeben.</div>
+									</div>
+									<div class="checkout-field">
+										<label>CVV *</label>
+										<input type="text" id="field-card-cvv" placeholder="•••" autocomplete="cc-csc" maxlength="4" inputmode="numeric">
+										<div class="field-error-msg">Bitte CVV eingeben.</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="payment-option" data-method="bank" onclick="selectPayment('bank')">
+							<input type="radio" name="payment" value="bank">
+							<div class="payment-radio-dot"></div>
+							<i class="fa fa-university payment-icon"></i>
+							<span class="payment-label">Banküberweisung (SEPA)</span>
+						</div>
+
+						<div id="bank-panel">
+							<div class="bank-info">
+								<p style="margin:0 0 12px 0;color:#aaa;">Überweise den Betrag auf folgendes Konto. Deine Bestellung wird bearbeitet, sobald die Zahlung eingegangen ist.</p>
+								<table>
+									<tr><td>Empfänger</td><td>WORLD CUP SHOP GmbH</td></tr>
+									<tr><td>IBAN</td><td>DE89 3704 0044 0532 0130 00</td></tr>
+									<tr><td>BIC</td><td>COBADEFFXXX</td></tr>
+									<tr><td>Verwendungszweck</td><td id="bank-reference">Wird nach Bestellung angezeigt</td></tr>
+								</table>
+							</div>
+						</div>
+
+						<div id="paypal-panel" style="display:none;"></div>
+					</div>
+
+					<!-- Terms & Submit (mobile) -->
+					<div class="d-lg-none">
+						<label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-family:Poppins-Regular;font-size:13px;color:#888;margin-bottom:20px;">
+							<input type="checkbox" id="terms-check-mobile" style="margin-top:2px;flex-shrink:0;width:16px;height:16px;accent-color:#fff;">
+							<span>Ich akzeptiere die <a href="#" style="color:#fff;">AGB</a> und die <a href="#" style="color:#fff;">Datenschutzerklärung</a>.</span>
+						</label>
+						<button class="btn-place-order" onclick="submitOrder(event)">Bestellung aufgeben</button>
+						<div class="secure-badge">
+							<i class="zmdi zmdi-lock"></i>
+							<span>SSL-gesicherte Übertragung</span>
+						</div>
+					</div>
+
+				</div><!-- /col left -->
+
+				<!-- ── RIGHT: Order summary ── -->
+				<div class="col-lg-5 col-12">
+					<div class="order-summary-box">
+						<p class="checkout-section-title" style="margin-bottom:14px;">Bestellübersicht</p>
+
+						<!-- Items from cart -->
+						<div id="checkout-items-list">
+							<!-- Filled by JS -->
+						</div>
+
+						<!-- Totals -->
+						<div class="order-totals">
+							<div class="order-total-row">
+								<span>Zwischensumme</span>
+								<span id="checkout-subtotal">€0.00</span>
+							</div>
+							<div class="order-total-row order-discount-row" id="checkout-discount-row" style="display:none;">
+								<span>Rabatt</span>
+								<span id="checkout-discount">-€0.00</span>
+							</div>
+							<div class="order-total-row">
+								<span>Versand</span>
+								<span id="checkout-shipping">Kostenlos</span>
+							</div>
+							<div class="order-total-row grand">
+								<span>Gesamt</span>
+								<span id="checkout-total">€0.00</span>
+							</div>
+						</div>
+
+						<!-- Terms & Submit (desktop) -->
+						<div class="d-none d-lg-block">
+							<label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-family:Poppins-Regular;font-size:13px;color:#888;margin-top:18px;">
+								<input type="checkbox" id="terms-check" style="margin-top:2px;flex-shrink:0;width:16px;height:16px;accent-color:#fff;">
+								<span>Ich akzeptiere die <a href="#" style="color:#fff;">AGB</a> und die <a href="#" style="color:#fff;">Datenschutzerklärung</a>.</span>
+							</label>
+							<button class="btn-place-order" onclick="submitOrder(event)">Bestellung aufgeben</button>
+							<div class="secure-badge">
+								<i class="zmdi zmdi-lock"></i>
+								<span>SSL-gesicherte Übertragung · 256-Bit Verschlüsselung</span>
+							</div>
+						</div>
+					</div>
+				</div><!-- /col right -->
+
+			</div><!-- /row -->
+		</div><!-- /container -->
+	</div>
+
+	<!-- ═══════════ SUCCESS OVERLAY ═══════════ -->
+	<div id="order-success-overlay">
+		<div class="success-checkmark">✓</div>
+		<div class="success-title">Bestellung aufgegeben!</div>
+		<div class="success-subtitle">Vielen Dank für deine Bestellung. Du erhältst in Kürze eine Bestätigungs-E-Mail mit allen Details.</div>
+		<div class="success-order-nr">Bestellnummer: <span id="success-order-number">#WCS-000000</span></div>
+		<a href="index.html" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer"
+			style="text-decoration:none;background:#fff;color:#000;font-family:Poppins-Bold;text-transform:uppercase;letter-spacing:2px;padding:14px 40px;font-size:13px;">
+			Weiter shoppen
+		</a>
+	</div>
+
+
+	<footer class="footer-lfdy bg0 p-t-40 p-b-40" style="border-top:1px solid #222;background-color:#000 !important;">
+		<div class="container text-uppercase" style="font-weight:700;font-size:13px;font-family:Poppins-Bold;">
+			<div class="flex-sb-m p-tb-15" style="border-bottom:1px solid #222;color:#fff;">CUSTOMER SERVICE <i class="zmdi zmdi-plus"></i></div>
+			<div class="flex-sb-m p-tb-15" style="border-bottom:1px solid #222;color:#fff;">COMPANY <i class="zmdi zmdi-plus"></i></div>
+			<div class="flex-sb-m p-tb-15" style="border-bottom:1px solid #222;color:#fff;">LEGAL <i class="zmdi zmdi-plus"></i></div>
+			<div class="flex-sb-m p-tb-15" style="border-bottom:1px solid #222;color:#fff;">STORES <i class="zmdi zmdi-plus"></i></div>
+			<div class="flex-sb-m p-t-40" style="font-size:10px;color:#888;font-family:Poppins-Regular;text-transform:none;">
+				<span>© WORLD CUP SHOP 2026</span>
+				<div class="flex-w">
+					<i class="zmdi zmdi-facebook m-l-20" style="font-size:16px;color:#fff;"></i>
+					<i class="zmdi zmdi-instagram m-l-20" style="font-size:16px;color:#fff;"></i>
+					<i class="zmdi zmdi-twitter m-l-20" style="font-size:16px;color:#fff;"></i>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<div class="btn-back-to-top" id="myBtn">
+		<span class="symbol-btn-back-to-top"><i class="zmdi zmdi-chevron-up"></i></span>
+	</div>
+
+	<!-- ═══════════ SCRIPTS ═══════════ -->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/select2/select2.min.js"></script>
+	<script src="vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
+	<script src="vendor/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function () {
+			$(this).css('position', 'relative');
+			$(this).css('overflow', 'hidden');
+			var ps = new PerfectScrollbar(this, { wheelSpeed: 1, scrollingThreshold: 1000, wheelPropagation: false });
+			$(window).on('resize', function () { ps.update(); });
+		});
+	</script>
+	<script src="data/products.js"></script>
+	<script src="js/cart.js"></script>
+	<script src="js/bundle.js"></script>
+	<script src="js/shop.js"></script>
+	<script src="js/main.js"></script>
+
+	<script>
+	/* ─── Card number formatting ─── */
+	document.getElementById('field-card-number').addEventListener('input', function () {
+		var v = this.value.replace(/\D/g, '').substring(0, 16);
+		this.value = v.replace(/(.{4})/g, '$1 ').trim();
+	});
+
+	/* ─── Expiry formatting ─── */
+	document.getElementById('field-card-expiry').addEventListener('input', function () {
+		var v = this.value.replace(/\D/g, '').substring(0, 4);
+		if (v.length >= 3) v = v.substring(0, 2) + ' / ' + v.substring(2);
+		this.value = v;
+	});
+
+	/* ─── Payment method selection ─── */
+	var _currentPaymentMethod = 'card'; /* default */
+	function selectPayment(method) {
+		_currentPaymentMethod = method;
+		document.querySelectorAll('.payment-option').forEach(function (el) {
+			el.classList.toggle('selected', el.dataset.method === method);
+		});
+		document.getElementById('card-fields-panel').classList.toggle('visible', method === 'card');
+		document.getElementById('bank-panel').classList.toggle('visible', method === 'bank');
+	}
+
+	/* ─── Load cart into order summary ─── */
+	document.addEventListener('DOMContentLoaded', function () {
+		var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
+		var listEl = document.getElementById('checkout-items-list');
+		var subtotalEl = document.getElementById('checkout-subtotal');
+		var totalEl = document.getElementById('checkout-total');
+
+		if (!cartData.length) {
+			listEl.innerHTML = '<p style="color:#666;font-family:Poppins-Regular;font-size:13px;padding:12px 0;">Dein Warenkorb ist leer. <a href="index.html" style="color:#fff;">Weiter shoppen</a></p>';
+			return;
+		}
+
+		var subtotal = 0;
+		var html = '';
+		cartData.forEach(function (item) {
+			var p = item.product;
+			var lineTotal = parseFloat(p.price) * item.qty;
+			subtotal += lineTotal;
+			html += '<div class="order-item">' +
+				'<div class="order-item-img-wrap">' +
+				'<img src="' + (p.images && p.images[0] ? p.images[0] : 'images/product-default.jpg') + '" alt="' + p.name + '">' +
+				'<span class="order-item-qty-badge">' + item.qty + '</span>' +
+				'</div>' +
+				'<div class="order-item-name">' + p.name + '</div>' +
+				'<div class="order-item-price">€' + lineTotal.toFixed(2) + '</div>' +
+				'</div>';
+		});
+		listEl.innerHTML = html;
+
+		subtotalEl.textContent = '€' + subtotal.toFixed(2);
+		totalEl.textContent = '€' + subtotal.toFixed(2);
+
+		/* Bundle discount */
+		if (typeof window.BundleEngine !== 'undefined') {
+			var result = window.BundleEngine.calculateTotal(cartData);
+			if (result && result.discount > 0) {
+				document.getElementById('checkout-discount').textContent = '-€' + result.discount.toFixed(2);
+				document.getElementById('checkout-discount-row').style.display = 'flex';
+				totalEl.textContent = '€' + result.total.toFixed(2);
+			}
+		}
+	});
+
+	/* ─── Form validation & order submission ─── */
+	function validateField(id, validatorFn) {
+		var el = document.getElementById(id);
+		var ok = validatorFn(el.value.trim());
+		el.classList.toggle('error', !ok);
+		return ok;
+	}
+
+	function submitOrder(e) {
+		e.preventDefault();
+
+		/* Validate required fields */
+		var ok = true;
+		ok = validateField('field-firstname', function (v) { return v.length > 0; }) && ok;
+		ok = validateField('field-lastname', function (v) { return v.length > 0; }) && ok;
+		ok = validateField('field-email', function (v) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); }) && ok;
+		ok = validateField('field-street', function (v) { return v.length > 0; }) && ok;
+		ok = validateField('field-zip', function (v) { return v.length >= 4; }) && ok;
+		ok = validateField('field-city', function (v) { return v.length > 0; }) && ok;
+		ok = validateField('field-country', function (v) { return v.length > 0; }) && ok;
+
+		/* Payment-specific validation */
+		var method = _currentPaymentMethod || (document.querySelector('.payment-option.selected') ? document.querySelector('.payment-option.selected').dataset.method : 'card');
+		if (method === 'card') {
+			ok = validateField('field-card-name', function (v) { return v.length > 0; }) && ok;
+			ok = validateField('field-card-number', function (v) { return v.replace(/\s/g,'').length === 16; }) && ok;
+			ok = validateField('field-card-expiry', function (v) { return /^\d{2}\s*\/\s*\d{2}$/.test(v); }) && ok;
+			ok = validateField('field-card-cvv', function (v) { return v.length >= 3; }) && ok;
+		}
+
+		/* Terms checkbox */
+		var termsCheck = document.getElementById('terms-check') || document.getElementById('terms-check-mobile');
+		if (!termsCheck.checked) {
+			alert('Bitte akzeptiere die AGB und Datenschutzerklärung.');
+			return;
+		}
+
+		if (!ok) {
+			/* Scroll to first error */
+			var firstErr = document.querySelector('.checkout-field input.error, .checkout-field select.error');
+			if (firstErr) firstErr.scrollIntoView({ behavior: 'smooth', block: 'center' });
+			return;
+		}
+
+		/* All good — show success */
+		var orderNumber = '#WCS-' + Math.floor(100000 + Math.random() * 900000);
+		document.getElementById('success-order-number').textContent = orderNumber;
+		document.getElementById('bank-reference').textContent = orderNumber;
+
+		/* Clear cart */
+		localStorage.removeItem('wcs_cart');
+		if (typeof updateCartUI === 'function') updateCartUI();
+
+		document.getElementById('order-success-overlay').classList.add('show');
+		window.scrollTo(0, 0);
+	}
+	</script>
+
+	<!-- Address Autocomplete (OpenStreetMap Nominatim) -->
+	<style>
+		#street-suggestions {
+			display: none;
+			position: absolute;
+			top: 100%;
+			left: 0;
+			right: 0;
+			background: #111;
+			border: 1px solid #333;
+			border-top: none;
+			border-radius: 0 0 4px 4px;
+			box-shadow: 0 8px 24px rgba(0,0,0,.7);
+			z-index: 99999;
+			max-height: 320px;
+			overflow-y: auto;
+		}
+		.sug-item {
+			display: flex;
+			align-items: flex-start;
+			gap: 12px;
+			padding: 11px 14px;
+			cursor: pointer;
+			border-top: 1px solid #1e1e1e;
+			transition: background .15s;
+		}
+		.sug-item:first-child { border-top: none; }
+		.sug-item:hover, .sug-item.active { background: #1a1a1a; }
+		.sug-pin {
+			flex-shrink: 0;
+			margin-top: 3px;
+			color: #555;
+			font-size: 15px;
+			width: 18px;
+			text-align: center;
+		}
+		.sug-text { flex: 1; min-width: 0; }
+		.sug-main {
+			font-family: Poppins-Medium, Arial, sans-serif;
+			font-size: 13px;
+			color: #ddd;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.sug-main b { color: #fff; font-weight: 700; }
+		.sug-sub {
+			font-family: Poppins-Regular, Arial, sans-serif;
+			font-size: 11px;
+			color: #555;
+			margin-top: 2px;
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+		.sug-footer {
+			padding: 5px 14px 7px;
+			text-align: right;
+			border-top: 1px solid #1e1e1e;
+			font-family: Poppins-Regular, Arial, sans-serif;
+			font-size: 10px;
+			color: #444;
+		}
+	</style>
+	<script>
+	(function () {
+		var input, box, timer, activeIdx = -1, lastResults = [];
+
+		function init() {
+			input = document.getElementById('field-street');
+			if (!input) return;
+
+			box = document.createElement('div');
+			box.id = 'street-suggestions';
+			input.parentNode.style.position = 'relative';
+			input.parentNode.appendChild(box);
+
+			input.addEventListener('input', function () {
+				clearTimeout(timer);
+				var q = input.value.trim();
+				if (q.length < 3) { hide(); return; }
+				timer = setTimeout(function () { fetchSuggestions(q); }, 350);
+			});
+
+			input.addEventListener('keydown', function (e) {
+				var items = box.querySelectorAll('.sug-item');
+				if (!items.length) return;
+				if (e.key === 'ArrowDown') {
+					e.preventDefault();
+					activeIdx = Math.min(activeIdx + 1, items.length - 1);
+					highlight(items);
+				} else if (e.key === 'ArrowUp') {
+					e.preventDefault();
+					activeIdx = Math.max(activeIdx - 1, 0);
+					highlight(items);
+				} else if (e.key === 'Enter' && activeIdx >= 0) {
+					e.preventDefault();
+					fillFromResult(lastResults[activeIdx]);
+					hide();
+				} else if (e.key === 'Escape') {
+					hide();
+				}
+			});
+
+			document.addEventListener('click', function (e) {
+				if (!input.parentNode.contains(e.target)) hide();
+			});
+		}
+
+		function highlight(items) {
+			items.forEach(function (el, i) {
+				el.classList.toggle('active', i === activeIdx);
+			});
+		}
+
+		function fetchSuggestions(q) {
+			var url = 'https://nominatim.openstreetmap.org/search'
+				+ '?format=json&addressdetails=1&limit=6&countrycodes=de,at,ch'
+				+ '&q=' + encodeURIComponent(q);
+			fetch(url, { headers: { 'Accept-Language': 'de' } })
+				.then(function (r) { return r.json(); })
+				.then(function (data) { render(data); })
+				.catch(function () { hide(); });
+		}
+
+		function render(results) {
+			lastResults = results;
+			activeIdx = -1;
+			box.innerHTML = '';
+			if (!results.length) { hide(); return; }
+
+			results.forEach(function (r) {
+				var a = r.address || {};
+				var road = a.road || a.pedestrian || a.path || a.suburb || '';
+				var num  = a.house_number || '';
+				var city = a.city || a.town || a.village || a.municipality || '';
+				var state = a.state || '';
+				var zip  = a.postcode || '';
+
+				var mainText = road + (num ? ' ' + num : '');
+				if (!mainText) mainText = r.display_name.split(',')[0];
+				var subText = [zip, city, state].filter(Boolean).join(', ');
+
+				var item = document.createElement('div');
+				item.className = 'sug-item';
+				item.innerHTML =
+					'<div class="sug-pin"><i class="zmdi zmdi-pin"></i></div>' +
+					'<div class="sug-text">' +
+						'<div class="sug-main">' + esc(mainText) + '</div>' +
+						'<div class="sug-sub">'  + esc(subText)  + '</div>' +
+					'</div>';
+
+				(function (res) {
+					item.addEventListener('mousedown', function (e) {
+						e.preventDefault();
+						fillFromResult(res);
+						hide();
+					});
+				}(r));
+
+				box.appendChild(item);
+			});
+
+			var foot = document.createElement('div');
+			foot.className = 'sug-footer';
+			foot.textContent = 'Powered by OpenStreetMap';
+			box.appendChild(foot);
+
+			box.style.display = 'block';
+		}
+
+		function fillFromResult(r) {
+			var a = r.address || {};
+			var road = a.road || a.pedestrian || a.path || '';
+			var num  = a.house_number || '';
+			var city = a.city || a.town || a.village || a.municipality || '';
+			var zip  = a.postcode || '';
+			var cc   = (a.country_code || 'de').toUpperCase();
+
+			input.value = road + (num ? ' ' + num : '');
+			if (zip)  document.getElementById('field-zip').value  = zip;
+			if (city) document.getElementById('field-city').value = city;
+			var sel = document.getElementById('field-country');
+			if (sel) {
+				for (var i = 0; i < sel.options.length; i++) {
+					if (sel.options[i].value === cc) { sel.selectedIndex = i; break; }
+				}
+			}
+		}
+
+		function hide() { box.style.display = 'none'; activeIdx = -1; }
+
+		function esc(s) {
+			return String(s)
+				.replace(/&/g, '&amp;')
+				.replace(/</g, '&lt;')
+				.replace(/>/g, '&gt;');
+		}
+
+		if (document.readyState === 'loading') {
+			document.addEventListener('DOMContentLoaded', init);
+		} else {
+			init();
+		}
+	})();
+	</script>
+</body>
+</html>
