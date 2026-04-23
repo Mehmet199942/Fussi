@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Zahlung erfolgreich | WORLD CUP SHOP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <style>
+        body { background: #000; color: #fff; font-family: Poppins-Regular, sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .success-card { background: #0d0d0d; border: 1px solid #222; padding: 60px 40px; border-radius: 4px; text-align: center; max-width: 500px; width: 90%; }
+        .success-icon { width: 80px; height: 80px; background: #1a3a1a; border: 2px solid #4caf50; color: #4caf50; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 40px; margin: 0 auto 30px; }
+        h1 { font-family: Poppins-Bold; text-transform: uppercase; letter-spacing: 3px; font-size: 24px; margin-bottom: 20px; }
+        p { color: #888; line-height: 1.6; margin-bottom: 40px; }
+        .btn-home { background: #fff; color: #000; font-family: Poppins-Bold; text-transform: uppercase; letter-spacing: 2px; padding: 15px 40px; text-decoration: none; border-radius: 2px; transition: background .2s; }
+        .btn-home:hover { background: #e0e0e0; color: #000; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="success-card">
+        <div class="success-icon">✓</div>
+        <h1>Zahlung erfolgreich!</h1>
+        <p>Vielen Dank für deine Bestellung. Wir haben deine Zahlung erhalten und bearbeiten deine Bestellung nun so schnell wie möglich. Du erhältst in Kürze eine Bestätigungs-E-Mail.</p>
+        <a href="index.html" class="btn-home">Zurück zum Shop</a>
+    </div>
+
+    <script>
+        // Clear cart on success
+        localStorage.removeItem('wcs_cart');
+    </script>
+</body>
+</html>

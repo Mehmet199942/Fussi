@@ -85,7 +85,7 @@ const csvProducts = [
         "sizeNote": "",
         "keywords": "",
         "related_products": "",
-        "url": "generated/product-krd 12.html",
+        "url": "product-krd 12.html",
         "image2": "images/krd/12.png",
         "image3": "images/krd/12.png"
     },
@@ -103,7 +103,7 @@ const csvProducts = [
         "sizeNote": "",
         "keywords": "",
         "related_products": "",
-        "url": "generated/product-br 1.html",
+        "url": "product-br 1.html",
         "image2": "images/br/1.png",
         "image3": "images/br/1.png"
     },
@@ -121,7 +121,7 @@ const csvProducts = [
         "sizeNote": "",
         "keywords": "",
         "related_products": "",
-        "url": "generated/product-de 1.html",
+        "url": "product-de 1.html",
         "image2": "images/de/07556799.jpg",
         "image3": "images/de/07556799.jpg"
     },
@@ -153,7 +153,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 1.html",
+        "url": "product-krd 1.html",
         "image2": "images/krd/1.png",
         "image3": "images/krd/1.png"
     },
@@ -185,7 +185,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 2.html",
+        "url": "product-krd 2.html",
         "image2": "images/krd/2.png",
         "image3": "images/krd/2.png"
     },
@@ -217,7 +217,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 3.html",
+        "url": "product-krd 3.html",
         "image2": "images/krd/3.png",
         "image3": "images/krd/3.png"
     },
@@ -249,7 +249,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 4.html",
+        "url": "product-krd 4.html",
         "image2": "images/krd/4.png",
         "image3": "images/krd/4.png"
     },
@@ -281,7 +281,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 5.html",
+        "url": "product-krd 5.html",
         "image2": "images/krd/5.png",
         "image3": "images/krd/5.png"
     },
@@ -313,7 +313,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 6.html",
+        "url": "product-krd 6.html",
         "image2": "images/krd/6.png",
         "image3": "images/krd/6.png"
     },
@@ -345,7 +345,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 7.html",
+        "url": "product-krd 7.html",
         "image2": "images/krd/7.png",
         "image3": "images/krd/7.png"
     },
@@ -377,7 +377,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 8.html",
+        "url": "product-krd 8.html",
         "image2": "images/krd/8.png",
         "image3": "images/krd/8.png"
     },
@@ -409,7 +409,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 9.html",
+        "url": "product-krd 9.html",
         "image2": "images/krd/9.png",
         "image3": "images/krd/9.png"
     },
@@ -441,7 +441,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 10.html",
+        "url": "product-krd 10.html",
         "image2": "images/krd/10.png",
         "image3": "images/krd/10.png"
     },
@@ -473,7 +473,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 11.html",
+        "url": "product-krd 11.html",
         "image2": "images/krd/11.png",
         "image3": "images/krd/11.png"
     },
@@ -505,7 +505,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 13.html",
+        "url": "product-krd 13.html",
         "image2": "images/krd/13.png",
         "image3": "images/krd/13.png"
     },
@@ -537,7 +537,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 14.html",
+        "url": "product-krd 14.html",
         "image2": "images/krd/14.png",
         "image3": "images/krd/14.png"
     },
@@ -569,7 +569,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 15.html",
+        "url": "product-krd 15.html",
         "image2": "images/krd/15.png",
         "image3": "images/krd/15.png"
     },
@@ -601,7 +601,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 16.html",
+        "url": "product-krd 16.html",
         "image2": "images/krd/16.png",
         "image3": "images/krd/16.png"
     },
@@ -633,7 +633,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 17.html",
+        "url": "product-krd 17.html",
         "image2": "images/krd/17.png",
         "image3": "images/krd/17.png"
     },
@@ -665,7 +665,7 @@ const csvProducts = [
             "Rot",
             "Blau"
         ],
-        "url": "generated/product-krd 18.html",
+        "url": "product-krd 18.html",
         "image2": "images/krd/18.png",
         "image3": "images/krd/18.png"
     }

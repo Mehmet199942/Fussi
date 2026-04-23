@@ -117,7 +117,7 @@
         <div class="wrap-header-mobile d-lg-none"
             style="position:absolute;top:30px;left:0;width:100%;height:60px;z-index:1000;background-color:transparent;display:flex;justify-content:space-between;align-items:center;padding:0 15px;">
             <div class="header-mobile-left" style="display:flex;align-items:center;z-index:1005;">
-                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r-20" style="padding:0;"><span
+                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r-20 js-show-sidebar" style="padding:0;"><span
                         class="hamburger-box"><span class="hamburger-inner"></span></span></div>
                 <div class="icon-header-item cl0 hov-cl1 trans-04 js-show-modal-search"
                     style="color:white;font-size:20px;padding:0;"><i class="zmdi zmdi-search"></i></div>
@@ -136,12 +136,24 @@
     <div class="wrap-sidebar-menu js-sidebar">
             <div class="s-full js-hide-sidebar"></div>
             <div class="sidebar-menu flex-col-l p-l-40 p-r-25 p-t-30 p-b-40">
-                <div class="flex-w flex-sb-m p-b-30 w-full" style="justify-content:flex-start;">
+                <div class="flex-w flex-sb-m p-b-20 w-full" style="justify-content:flex-start;">
                     <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-sidebar"
                         style="margin-left:-10px;"><i class="zmdi zmdi-close"></i></div>
+                    <span class="stext-101 cl2" style="font-family:Poppins-Bold;text-transform:uppercase;letter-spacing:2px;margin-left:15px;font-size:14px;">WÄHLE DEINE NATION</span>
                 </div>
-                <div class="sidebar-menu-content flex-w js-pscroll w-full">
-                    <ul class="sidebar-menu-wrapitem w-full js-sidebar-nations"></ul>
+
+                <!-- Sidebar Search -->
+                <div class="sidebar-search w-full p-b-20">
+                    <div class="bor17 of-hidden pos-relative" style="border-radius: 25px; background: #111; border: 1px solid #333;">
+                        <input id="sidebar-nation-search-input" class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search" placeholder="Nation suchen..." style="background: transparent; border: none; height: 45px; color: #fff;">
+                        <button class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04" style="height: 45px; width: 45px;">
+                            <i class="zmdi zmdi-search" style="color: #888;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-menu-content flex-w w-full" style="height: calc(100vh - 200px); overflow-y: auto; display: block !important;">
+                    <div class="sidebar-menu-wrapitem w-full js-sidebar-nations" style="display: grid !important; padding-bottom: 50px;"></div>
                 </div>
                 <div class="w-full p-t-40"><a href="anmelden.html"
                         class="flex-c-m stext-101 cl2 size-104 bg-transparent hov-btn1 p-lr-15 trans-04 flex-w flex-l-m m-b-20"
@@ -340,6 +352,8 @@
 			})();
 		</script>
 
+	<script src="data/products.js"></script>
+	<script src="js/shop.js"></script>
 	<!-- Cart -->
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
@@ -478,34 +492,47 @@
 		</div>
 	</section>	
 	
-	<!-- Footer Accordion-like Links (LFDY Style) -->
-	<footer class="footer-lfdy bg0 p-t-40 p-b-40"
-		style="border-top: 1px solid #222; background-color: #000 !important;">
-		<div class="container text-uppercase" style="font-weight: 700; font-size: 13px; font-family: Poppins-Bold;">
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				CUSTOMER SERVICE <i class="zmdi zmdi-plus"></i>
-			</div>
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				COMPANY <i class="zmdi zmdi-plus"></i>
-			</div>
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				LEGAL <i class="zmdi zmdi-plus"></i>
-			</div>
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				STORES <i class="zmdi zmdi-plus"></i>
+	<!-- Footer -->
+	<footer class="footer-minimal">
+		<div class="container">
+
+			<!-- Social Icons -->
+			<div class="social-links-minimal">
+				<a href="#" class="fs-22 cl0 hov-cl1 trans-04">
+					<i class="fa fa-instagram"></i>
+				</a>
+				<a href="#" class="fs-22 cl0 hov-cl1 trans-04">
+					<i class="fa fa-music"></i>
+				</a>
+				<a href="#" class="fs-22 cl0 hov-cl1 trans-04">
+					<i class="fa fa-whatsapp"></i>
+				</a>
 			</div>
 
-			<div class="flex-sb-m p-t-40"
-				style="font-size: 10px; color: #888; font-family: Poppins-Regular; text-transform: none;">
-				<span>© LIVE FAST DIE YOUNG 2026</span>
-				<div class="flex-w">
-					<i class="zmdi zmdi-facebook m-l-20" style="font-size: 16px; color: #fff;"></i>
-					<i class="zmdi zmdi-instagram m-l-20" style="font-size: 16px; color: #fff;"></i>
-					<i class="zmdi zmdi-twitter m-l-20" style="font-size: 16px; color: #fff;"></i>
+			<!-- Footer Bottom Bar -->
+			<div class="footer-bottom-minimal" style="border-top: 1px solid #222; padding-top: 30px;">
+				<div class="footer-left-minimal">
+					© WORLD CUP SHOP 2026
+				</div>
+
+				<div class="footer-links-minimal">
+					<a href="support.html">Support</a>
+					<a href="versand.html">Versandkonditionen</a>
+					<a href="agb.html">AGB</a>
+					<a href="impressum.html">Impressum</a>
+					<a href="datenschutz.html">Datenschutzerklärung</a>
+					<a href="cookie-einstellungen.html">Cookie-Einstellungen</a>
+					<a href="jobs.html">Jobs</a>
+				</div>
+
+				<div class="footer-right-minimal">
+					<span><i class="zmdi zmdi-globe-alt"></i> Deutsch</span>
+					<span>€ Eur</span>
 				</div>
 			</div>
 		</div>
 	</footer>
+	<!-- End Footer -->
 
 	<!-- Back to top -->
 	<div class="btn-back-to-top" id="myBtn">

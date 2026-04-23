@@ -131,7 +131,7 @@
         <div class="wrap-header-mobile d-lg-none"
             style="position:absolute;top:30px;left:0;width:100%;height:60px;z-index:1000;background-color:transparent;display:flex;justify-content:space-between;align-items:center;padding:0 15px;">
             <div class="header-mobile-left" style="display:flex;align-items:center;z-index:1005;">
-                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r-20" style="padding:0;"><span
+                <div class="btn-show-menu-mobile hamburger hamburger--squeeze m-r-20 js-show-sidebar" style="padding:0;"><span
                         class="hamburger-box"><span class="hamburger-inner"></span></span></div>
                 <div class="icon-header-item cl0 hov-cl1 trans-04 js-show-modal-search"
                     style="color:white;font-size:20px;padding:0;"><i class="zmdi zmdi-search"></i></div>
@@ -150,12 +150,24 @@
     <div class="wrap-sidebar-menu js-sidebar">
             <div class="s-full js-hide-sidebar"></div>
             <div class="sidebar-menu flex-col-l p-l-40 p-r-25 p-t-30 p-b-40">
-                <div class="flex-w flex-sb-m p-b-30 w-full" style="justify-content:flex-start;">
+                <div class="flex-w flex-sb-m p-b-20 w-full" style="justify-content:flex-start;">
                     <div class="fs-35 lh-10 cl2 p-lr-5 pointer hov-cl1 trans-04 js-hide-sidebar"
                         style="margin-left:-10px;"><i class="zmdi zmdi-close"></i></div>
+                    <span class="stext-101 cl2" style="font-family:Poppins-Bold;text-transform:uppercase;letter-spacing:2px;margin-left:15px;font-size:14px;">WÄHLE DEINE NATION</span>
                 </div>
-                <div class="sidebar-menu-content flex-w js-pscroll w-full">
-                    <ul class="sidebar-menu-wrapitem w-full js-sidebar-nations"></ul>
+
+                <!-- Sidebar Search -->
+                <div class="sidebar-search w-full p-b-20">
+                    <div class="bor17 of-hidden pos-relative" style="border-radius: 25px; background: #111; border: 1px solid #333;">
+                        <input id="sidebar-nation-search-input" class="stext-103 cl2 plh4 size-116 p-l-28 p-r-55" type="text" name="search" placeholder="Nation suchen..." style="background: transparent; border: none; height: 45px; color: #fff;">
+                        <button class="flex-c-m size-122 ab-t-r fs-18 cl4 hov-cl1 trans-04" style="height: 45px; width: 45px;">
+                            <i class="zmdi zmdi-search" style="color: #888;"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="sidebar-menu-content flex-w w-full" style="height: calc(100vh - 200px); overflow-y: auto; display: block !important;">
+                    <div class="sidebar-menu-wrapitem w-full js-sidebar-nations" style="display: grid !important; padding-bottom: 50px;"></div>
                 </div>
                 <div class="w-full p-t-40"><a href="anmelden.html"
                         class="flex-c-m stext-101 cl2 size-104 bg-transparent hov-btn1 p-lr-15 trans-04 flex-w flex-l-m m-b-20"
@@ -354,6 +366,8 @@
 			})();
 		</script>
 
+	<script src="data/products.js"></script>
+	<script src="js/shop.js"></script>
 	<!-- Cart -->
 	<div class="wrap-header-cart js-panel-cart">
 		<div class="s-full js-hide-cart"></div>
@@ -538,7 +552,7 @@
 							</div>
 						</div>
 
-						<a href="checkout.html" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer" style="text-decoration:none;">
+						<a href="#" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer js-btn-checkout" style="text-decoration:none;">
 							Zur Kasse gehen
 						</a>
 					</div>
@@ -551,34 +565,47 @@
 
 
 
-	<!-- Footer Accordion-like Links (LFDY Style) -->
-	<footer class="footer-lfdy bg0 p-t-40 p-b-40"
-		style="border-top: 1px solid #222; background-color: #000 !important;">
-		<div class="container text-uppercase" style="font-weight: 700; font-size: 13px; font-family: Poppins-Bold;">
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				CUSTOMER SERVICE <i class="zmdi zmdi-plus"></i>
-			</div>
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				COMPANY <i class="zmdi zmdi-plus"></i>
-			</div>
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				LEGAL <i class="zmdi zmdi-plus"></i>
-			</div>
-			<div class="flex-sb-m p-tb-15" style="border-bottom: 1px solid #222; color: #fff;">
-				STORES <i class="zmdi zmdi-plus"></i>
+	<!-- Footer -->
+	<footer class="footer-minimal">
+		<div class="container">
+
+			<!-- Social Icons -->
+			<div class="social-links-minimal">
+				<a href="#" class="fs-22 cl0 hov-cl1 trans-04">
+					<i class="fa fa-instagram"></i>
+				</a>
+				<a href="#" class="fs-22 cl0 hov-cl1 trans-04">
+					<i class="fa fa-music"></i>
+				</a>
+				<a href="#" class="fs-22 cl0 hov-cl1 trans-04">
+					<i class="fa fa-whatsapp"></i>
+				</a>
 			</div>
 
-			<div class="flex-sb-m p-t-40"
-				style="font-size: 10px; color: #888; font-family: Poppins-Regular; text-transform: none;">
-				<span>© LIVE FAST DIE YOUNG 2026</span>
-				<div class="flex-w">
-					<i class="zmdi zmdi-facebook m-l-20" style="font-size: 16px; color: #fff;"></i>
-					<i class="zmdi zmdi-instagram m-l-20" style="font-size: 16px; color: #fff;"></i>
-					<i class="zmdi zmdi-twitter m-l-20" style="font-size: 16px; color: #fff;"></i>
+			<!-- Footer Bottom Bar -->
+			<div class="footer-bottom-minimal" style="border-top: 1px solid #222; padding-top: 30px;">
+				<div class="footer-left-minimal">
+					© WORLD CUP SHOP 2026
+				</div>
+
+				<div class="footer-links-minimal">
+					<a href="support.html">Support</a>
+					<a href="versand.html">Versandkonditionen</a>
+					<a href="agb.html">AGB</a>
+					<a href="impressum.html">Impressum</a>
+					<a href="datenschutz.html">Datenschutzerklärung</a>
+					<a href="cookie-einstellungen.html">Cookie-Einstellungen</a>
+					<a href="jobs.html">Jobs</a>
+				</div>
+
+				<div class="footer-right-minimal">
+					<span><i class="zmdi zmdi-globe-alt"></i> Deutsch</span>
+					<span>€ Eur</span>
 				</div>
 			</div>
 		</div>
 	</footer>
+	<!-- End Footer -->
 
 
 	<!-- Back to top -->
@@ -629,125 +656,9 @@
 	<script src="js/cart.js"></script>
 	<script src="js/bundle.js"></script>
 	<script src="js/shop.js"></script>
+	<script type="module" src="public/js/cart-ui.js"></script>
+	<script type="module" src="public/js/checkout.js"></script>
 	<script src="js/main.js"></script>
-	<script>
-	document.addEventListener('DOMContentLoaded', function () {
-		function renderCartPage() {
-			var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
-			var tbody = document.getElementById('cart-page-items');
-			var emptyMsg = document.getElementById('cart-empty-msg');
-			var subtotalEl = document.getElementById('cart-page-subtotal');
-			var totalEl = document.getElementById('cart-page-total');
-			var discountRow = document.getElementById('cart-page-discount-row');
-			var discountEl = document.getElementById('cart-page-discount');
-
-			tbody.innerHTML = '';
-
-			if (!cartData.length) {
-				emptyMsg.style.display = 'block';
-				subtotalEl.textContent = '€0.00';
-				totalEl.textContent = '€0.00';
-				return;
-			}
-
-			emptyMsg.style.display = 'none';
-			var subtotal = 0;
-
-			cartData.forEach(function (item, idx) {
-				var p = item.product;
-				var price = (p.discountedPrice !== undefined) ? p.discountedPrice : (p.price || 0);
-				var lineTotal = price * item.qty;
-				subtotal += lineTotal;
-
-				var tr = document.createElement('tr');
-				tr.className = 'table_row';
-				tr.setAttribute('data-id', p.id);
-				tr.innerHTML =
-					'<td class="column-1"><div class="how-itemcart1">' +
-						'<img loading="lazy" src="' + (p.image || '') + '" alt="' + (p.name || '') + '">' +
-					'</div></td>' +
-					'<td class="column-2">' + (p.name || '') + '</td>' +
-					'<td class="column-3">€' + price.toFixed(2) + '</td>' +
-					'<td class="column-4">' +
-						'<div class="wrap-num-product flex-w m-l-auto m-r-0">' +
-							'<div class="btn-num-product-down cl8 hov-btn3 trans-04 flex-c-m cart-page-minus" data-id="' + p.id + '">' +
-								'<i class="fs-16 zmdi zmdi-minus"></i>' +
-							'</div>' +
-							'<input class="mtext-104 cl3 txt-center num-product cart-page-qty" type="number" value="' + item.qty + '" min="1" data-id="' + p.id + '">' +
-							'<div class="btn-num-product-up cl8 hov-btn3 trans-04 flex-c-m cart-page-plus" data-id="' + p.id + '">' +
-								'<i class="fs-16 zmdi zmdi-plus"></i>' +
-							'</div>' +
-						'</div>' +
-					'</td>' +
-					'<td class="column-5 cart-page-line-total">€' + lineTotal.toFixed(2) + '</td>';
-
-				tbody.appendChild(tr);
-			});
-
-			// Totals
-			var discount = (window.BundleEngine && window.BundleEngine.getDiscount) ? window.BundleEngine.getDiscount() : 0;
-			subtotalEl.textContent = '€' + subtotal.toFixed(2);
-			if (discount > 0) {
-				discountRow.style.display = '';
-				discountEl.textContent = '- €' + discount.toFixed(2);
-				totalEl.textContent = '€' + (subtotal - discount).toFixed(2);
-			} else {
-				discountRow.style.display = 'none';
-				totalEl.textContent = '€' + subtotal.toFixed(2);
-			}
-
-			// Bind +/- buttons
-			tbody.querySelectorAll('.cart-page-minus').forEach(function (btn) {
-				btn.addEventListener('click', function () {
-					var id = this.getAttribute('data-id');
-					var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
-					var item = cartData.find(function (i) { return i.product.id === id; });
-					if (item) {
-						item.qty -= 1;
-						if (item.qty <= 0) {
-							cartData = cartData.filter(function (i) { return i.product.id !== id; });
-						}
-						localStorage.setItem('wcs_cart', JSON.stringify(cartData));
-						if (typeof updateCartUI === 'function') updateCartUI();
-						renderCartPage();
-					}
-				});
-			});
-
-			tbody.querySelectorAll('.cart-page-plus').forEach(function (btn) {
-				btn.addEventListener('click', function () {
-					var id = this.getAttribute('data-id');
-					var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
-					var item = cartData.find(function (i) { return i.product.id === id; });
-					if (item) {
-						item.qty += 1;
-						localStorage.setItem('wcs_cart', JSON.stringify(cartData));
-						if (typeof updateCartUI === 'function') updateCartUI();
-						renderCartPage();
-					}
-				});
-			});
-
-			tbody.querySelectorAll('.cart-page-qty').forEach(function (input) {
-				input.addEventListener('change', function () {
-					var id = this.getAttribute('data-id');
-					var newQty = parseInt(this.value, 10);
-					var cartData = JSON.parse(localStorage.getItem('wcs_cart') || '[]');
-					if (newQty <= 0) {
-						cartData = cartData.filter(function (i) { return i.product.id !== id; });
-					} else {
-						var item = cartData.find(function (i) { return i.product.id === id; });
-						if (item) item.qty = newQty;
-					}
-					localStorage.setItem('wcs_cart', JSON.stringify(cartData));
-					if (typeof updateCartUI === 'function') updateCartUI();
-					renderCartPage();
-				});
-			});
-		}
-
-		renderCartPage();
-	});
 	</script>
 </body>
 
