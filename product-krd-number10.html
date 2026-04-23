@@ -69,7 +69,7 @@
 		</div>
 		<div class="wrap-menu-desktop how-shadow1">
 			<nav class="limiter-menu-desktop container">
-				<a href="index.html" class="logo"><img src="images/icons/logo-custom.png2.png" alt="WORLD CUP SHOP"></a>
+				<a href="index.html" class="logo"><img src="images/icons/logo-new.png" alt="WORLD CUP SHOP"></a>
 				<div class="menu-desktop"><ul class="main-menu js-desktop-nations"></ul></div>
 			</nav>
 		</div>
@@ -142,9 +142,35 @@
 
 <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
 <script src="vendor/slick/slick.min.js"></script>
+<script src="js/cart.js"></script>
+<script src="data/products.js"></script>
 <script>
 	$(document).ready(function () {
 		$('.slick3-pd').slick({ slidesToShow: 1, slidesToScroll: 1, fade: true, dots: true });
+		
+		$('.btn-add-to-bag').on('click', function() {
+			var sku = "KRD-NUMBER10-JERSEY".toLowerCase();
+			var product = (typeof products !== 'undefined') ? products.find(p => p.id.toLowerCase() === sku) : null;
+			
+			if (product && typeof window.addToCart === 'function') {
+				window.addToCart(product, 1);
+				$(this).text('HINZUGEFÜGT ✓');
+				setTimeout(() => { $(this).text('IN DEN WARENKORB LEGEN'); }, 2000);
+			} else {
+				// Fallback if not in database
+				var fallbackProduct = {
+					id: "KRD-NUMBER10-JERSEY",
+					name: "Kurdistan #10 Trikot",
+					price: 39.99,
+					image: "images/krd/10.png"
+				};
+				if (typeof window.addToCart === 'function') {
+					window.addToCart(fallbackProduct, 1);
+					$(this).text('HINZUGEFÜGT ✓');
+					setTimeout(() => { $(this).text('IN DEN WARENKORB LEGEN'); }, 2000);
+				}
+			}
+		});
 	});
 </script>
 <script src="js/main.js"></script>
